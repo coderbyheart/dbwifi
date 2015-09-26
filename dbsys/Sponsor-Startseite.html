@@ -1,0 +1,2245 @@
+<!DOCTYPE html>
+<!-- saved from url=(0086)https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN -->
+<html lang="eng" class="ui-mobile"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><!--<base href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN">--><base href=".">
+        <title>Sponsor-Startseite</title>
+        
+        <meta name="viewport" content="initial-scale=1,user-scalable=yes">
+        <meta http-equiv="X-UA-Compatible" content="IE=8, IE=9, IE=10">
+        <meta http-equiv="cache-control" content="no-store">
+        <meta http-equiv="Pragma" content="no-store">
+        <meta http-equiv="Expires" content="0">
+        <meta name="format-detection" content="telephone=no">
+        <link rel="icon" type="image/x-icon" href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/portals/227a7cd0-d76c-11e4-9f05-6cae8b6601b8/images/TEMP_9d5151f59ba24fefbbb00786e7b158d2db_icon.ico">
+        <link rel="apple-touch-icon" href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/portals/227a7cd0-d76c-11e4-9f05-6cae8b6601b8/images/apple-icon.png">
+        <link rel="stylesheet" href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal//css/sponsor.structure.css">
+        <link rel="stylesheet" href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/css/guest.theme.1.css">
+        <style>
+            .ui-header {
+                background-image: url("/sponsorportal/portals/227a7cd0-d76c-11e4-9f05-6cae8b6601b8/images/defaultDeletedImage.png") !important;
+            }
+             .create-step-expand{
+                 width:100%;
+             }
+        </style>
+
+        <style>
+    .ui-header {
+        
+            color: #212121 !important;
+        
+            background-color: #FFFFFF !important;
+        
+    }
+
+    .ui-page, .ui-content.ui-body-a, .ui-panel-content-wrap.ui-body-a {
+        
+            background-color: #D6D6D6 !important;
+            
+            background-image: none !important;
+        
+            color: #212121 !important;
+        
+    }
+</style>
+<script src="./Sponsor-Startseite_files/sponsor.app.js"></script>
+        <script>
+    (function(){
+        var ise = require('cisco/ise'),
+            portalSession = require('cisco/ise/portalSession');
+
+        ise.portal.setPortalSessionId('0e6b86ab-fdc6-4850-a3e7-3c26556a1759');
+        ise.portal.setPreviewMode('false');
+
+        portalSession.setParams({
+            portalId: '227a7cd0-d76c-11e4-9f05-6cae8b6601b8',
+            portalIdleTimeout: '10',
+            sessionIdleTimeout: ise.portal.SESSION_IDLE_TIMEOUT,
+            sessionId: '0e6b86ab-fdc6-4850-a3e7-3c26556a1759',
+            retryUrl: '',
+            logoutUrl: 'Logout.action'
+        });
+    })();
+</script>
+<script>
+            (function() {
+                var sponsor = require('cisco/ise/sponsor'),
+                    page = require('cisco/ise/sponsor/pages/home'),
+                    $ = require('jquery');
+
+                page.attachPageEventHandlers();
+
+                page.units = {
+                    'DAYS' : 'Tage',
+                    'HOURS' : 'Stunden',
+                    'MINUTES' : 'Minuten',
+
+                    'AM' : 'vorm.',
+                    'PM' : 'nachm.',
+
+                    'SUNDAY' : 'Sonntag',
+                    'MONDAY' : 'Montag',
+                    'TUESDAY' : 'Dienstag',
+                    'WEDNESDAY' : 'Mittwoch',
+                    'THURSDAY' : 'Donnerstag',
+                    'FRIDAY' : 'Freitag',
+                    'SATURDAY' : 'Samstag'
+                };
+
+                
+                page.accountStateLabels = {
+                    'AWAITING_INITIAL_LOGIN': 'Erstellt',
+                    'PENDING_APPROVAL': 'Genehmigung ausstehend',
+                    'DENIED': 'Abgelehnt',
+                    'EXPIRED': 'Abgelaufen',
+                    'ACTIVE': 'Aktiv',
+                    'SUSPENDED': 'Gesperrt:'
+                };
+
+                var approveSummaryStructure = [];
+                approveSummaryStructure.push({name:"username",value:'Benutzername:'});
+                approveSummaryStructure.push({name:"password",value:'Kennwort:'});
+                approveSummaryStructure.push({name:"email",value:'E-Mail-Adresse:'});
+                approveSummaryStructure.push({name:"company",value:'Unternehmen:'});
+                approveSummaryStructure.push({name:"phone",value:'Telefonnummer:'});
+                approveSummaryStructure.push({name:"guestType",value:'Gasttyp:'});
+                approveSummaryStructure.push({name:"status",value:'Status:'});
+                approveSummaryStructure.push({name:"creationTime",value:'Erstellungsdatum:'});
+                approveSummaryStructure.push({name:"fromDate",value:'Vom (jjjj-mm-tt):',append:"date"});
+                approveSummaryStructure.push({name:"groupTag",value:'Gruppen-Tag:'});
+                approveSummaryStructure.push({name:"language",value:'Sprache:'});
+                approveSummaryStructure.push({name:"toDate",value:'Bis zum (jjjj-mm-tt):',append:"date"});
+                approveSummaryStructure.push({name:"time",value:'Zeit:'});
+                approveSummaryStructure.push({name:"timefrom",value:'Startzeit:',append:"time"});
+                approveSummaryStructure.push({name:"timeto",value:'Endzeit:',append:"time"});
+                approveSummaryStructure.push({name:"location",value:'Ort:'});
+                approveSummaryStructure.push({name:"ssid",value:'SSID:'});
+                var manageSummaryStructure  = [].concat(approveSummaryStructure);
+                manageSummaryStructure.push({name:"timeleft",value:'Verbleibende Zeit:'});
+
+                
+
+page.manageGuestsStructure = [ {
+		property : 'id',
+		label : '',
+		sortable : false,
+		showTooltip: false
+	}, {
+		property : 'username',
+		label : 'Benutzername',
+		sortable : true
+	}, {
+		property : 'state',
+		label : 'Status',
+		sortable : false
+	}, {
+		property : 'firstName',
+		label : 'Vorname',
+		sortable : true
+	}, {
+		property : 'lastName',
+		label : 'Nachname',
+		sortable : true
+	}, {
+		property : 'email',
+		label : 'E-Mail-Adresse',
+		sortable : true
+	},  {
+		property : 'phone',
+		label : 'Telefonnummer',
+		sortable : true
+	}, {
+		property : 'groupTag',
+		label : 'Gruppen-Tag',
+		sortable : true
+	}, {
+		property : 'location',
+		label : 'Standort',
+		sortable : true
+	}, {
+		property : 'sponsor',
+		label : 'Sponsor',
+		sortable : true
+	},{
+		property : 'guestType',
+		label : 'G&auml;stetyp',
+		sortable : true
+	}, {
+		property : 'expirationDate',
+		label : 'Ablaufdatum',
+		sortable : true
+	}, {
+		property : 'timeLeft',
+		label : 'Verbleibende Zeit',
+		sortable : true
+	}
+]
+
+
+
+page.approveGuestsStructure  = [
+    
+    {
+      property : 'username',
+      label : 'Benutzername',
+      sortable : true
+    },
+    {
+      property : 'state',
+      label : 'Status',
+      sortable : false
+    },
+    {
+      property: 'firstName',
+      label: 'Vorname',
+      sortable: true
+    },
+    {
+      property: 'lastName',
+      label: 'Nachname',
+      sortable: true
+    },
+    {
+      property: 'email',
+      label: 'E-Mail-Adresse',
+      sortable: true
+    },
+    {
+      property: 'phone',
+      label: 'Telefonnummer',
+      sortable: true
+    },
+    {
+      property: 'company',
+      label: 'Unternehmen',
+      sortable: true
+    },
+    {
+      property: 'reason',
+      label: 'Grund f&uuml;r Besuch',
+      sortable: true
+    },
+    {
+      property : 'location',
+      label : 'Standort',
+      sortable : true
+    },
+    {
+      property : 'guestType',
+      label : 'G&auml;stetyp',
+      sortable : true
+    }
+]
+
+
+page.noticesStructure = [ {
+        property : 'id',
+        label : '',
+        sortable : false,
+		showTooltip: false
+    }, {
+        property : 'name',
+        label : 'Aktionsname',
+        sortable : true
+    }, {
+        property : 'numOfAccounts',
+        label : 'Anzahl von Konten',
+        sortable : true
+    }, {
+        property : 'localizedState',
+        label : 'Status',
+        sortable : true
+    }, {
+        property : 'timeStarted',
+        label : 'Start',
+        sortable : true
+    },  {
+        property : 'timeFinished',
+        label : 'Ende',
+        sortable : true
+    }/*,{
+        property : 'failed',
+        label : '',
+        sortable : true
+    },{
+        property : 'successful',
+        label : '',
+        sortable : true
+    }, {
+        property : 'errorMessage',
+        label : '',
+        sortable : true
+    }*/
+]
+
+
+                page.init({
+                	sponsorUsername:'DanielaScherf',
+                    portalSessionId: '0e6b86ab-fdc6-4850-a3e7-3c26556a1759',
+                    createKnownDisplayLanguage:"true",
+                    createKnownLanguageLabel:'Sprache:',
+                    createKnownDisplayGroupTag:"false",
+                    createKnownGroupTagLabel:'Gruppen-Tag:',
+                    approveSummaryStructure:approveSummaryStructure,
+                    manageSummaryStructure:manageSummaryStructure,
+                    locationLabel:'Ort:',
+                    ssidLabel:'SSID:',
+                    accessTimeUnitDays:'Tage',
+                    accessTimeUnitHours:'Stunden',
+                    accessTimeUnitMinutes:'Minuten',
+                    accessTimeUnitMaximum:'Maximum:',
+                    validationMessageRequired:'Dieses Feld ist ein Pflichtfeld.',
+                    validationMessageEmail:'Geben Sie eine g&uuml;ltige E-Mail-Adresse ein.',
+                    validationMessageDigit:'Geben Sie eine g&uuml;ltige Zahl ein.',
+                    validationMessageEqual:'Sie m&uuml;ssen das gleiche Kennwort in die Felder &bdquo;Neues Kennwort&ldquo; und &bdquo;Kennwort best&auml;tigen&ldquo; eingeben.',
+                    validationMessageNotEqual:'Sie k&ouml;nnen nicht das gleiche Kennwort in die Felder &quot;Aktuelles Kennwort&quot; und &quot;Neues Kennwort&quot; eingeben.',
+                    validationMessageFirstName:'Geben Sie einen g&uuml;ltigen Vornamen ein.',
+                    validationMessageLastName:'Geben Sie einen g&uuml;ltigen Nachnamen ein.',
+                    validationMessageMax:'Feldwert darf nicht gr&ouml;&szlig;er sein als {0}.',
+                    validationMessageMin:'Feldwert darf nicht kleiner sein als {0}.',
+                    validationMessageCompany:'Geben Sie einen g&uuml;ltigen Firmennamen ein.',
+                    validationMessagePhone:'Ung&uuml;ltiges Rufnummernformat.',
+                    validationMessageInvalidInput:'Ung&uuml;ltige Eingabe.',
+                    validationMessageDateYMD:'Ung&uuml;ltiges Datumsformat (jjjj-mm-tt).',
+                    validationMessageDateDMY:'Ung&uuml;ltiges Datumsformat (tt/mm/jjjj).',
+                    validationMessageDateMDY:'Ung&uuml;ltiges Datumsformat (mm/tt/jjjj).',
+                    validationMessageTime:'Ung&uuml;ltiges Uhrzeitformat (ss:mm).',
+                    validationMessageRangeLimited:'G&uuml;ltige Daten m&uuml;ssen im Bereich zwischen {0} und {1} liegen.',
+                    validationMessageRangeUnlimited:'G&uuml;ltige Daten m&uuml;ssen ab dem {0} beginnen.',
+                    fromTime:'Startzeit',
+                    toTime:'Endzeit',
+                    fromDate:'Vom (jjjj-mm-tt)',
+                    toDate:'Bis zum (jjjj-mm-tt)',
+                    duration:'Dauer:',
+                    mobile:false,
+                    
+                    	phoneRegex:/^(((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{1,3}\\)[ \\-]*)|([0-9]{1,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,5}?)|([0-9]{4,5}?)$/,
+                    
+                    maxRandom:"200",
+                    maxFutureStartDate:"-1",
+                    sponsorEmail: 'mario.hachemer@s2s.de',
+                    datePickerTitleDateDialogLabel:'"Datum einstellen"',
+                    datePickerShortWeekDaysLabels:['"So"','"Mo"','"Di"','"Mi"','"Do"','"Fr"','"Sa"'],
+                    datePickerMonthsOfYearLabels:['"Januar"','"Februar"','"M&auml;rz"','"April"','"Mai"','"Juni"','"Juli"','"August"','"September"','"Oktober"','"November"','"Dezember"'],
+                    datePickerHeaderFormat: '"%B %Y"',
+                    timePickerSetTimeButtonLabel:'"Zeit einstellen"',
+                    timePickerTitleTimeDialogLabel:'"Zeit w&amp;auml;hlen"',
+                    previewState: "",
+                    symbolTimeUnitDays:'T',
+                    symbolTimeUnitHours:'Std',
+                    symbolTimeUnitMinutes:'Mo'
+                });
+
+                
+
+            })();
+    </script>
+    </head>
+    <body class="cisco-ise-desktop ui-mobile-viewport ui-overlay-a">
+        <div id="block-ui"></div>
+        <div data-role="page" data-theme="a" id="page-create" class="page-home ui-page ui-body-a ui-page-panel ui-page-active" data-url="page-create" tabindex="0" style="min-height: 911px;">
+
+    <div id="cisco-mobile-menu-page-create" class="cisco-mobile-menu ui-panel ui-panel-position-right ui-panel-display-overlay ui-panel-closed ui-body-a ui-panel-animate side_panel" data-role="panel" data-display="overlay" data-position="right" data-theme="a">
+    <div class="ui-panel-inner"><div class="ui-panel-welcome-message">
+    	<p>Willkommen&nbsp;DanielaScherf</p>
+    </div><ul data-role="listview" data-icon="false" class="ui-listview">
+        <li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="false" data-iconpos="right" data-theme="a" class="ui-btn ui-btn-up-a ui-btn-icon-right ui-li-has-arrow ui-li ui-first-child"><div class="ui-btn-inner ui-li"><div class="ui-btn-text">
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#page-create" class="cisco-nav-button ui_create_accounts_button ui-btn-active ui-state-persist ui-link-inherit">Konten erstellen</a>
+        </div></div></li>
+        <li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="false" data-iconpos="right" data-theme="a" class="ui-btn ui-btn-up-a ui-btn-icon-right ui-li-has-arrow ui-li ui-li-has-count"><div class="ui-btn-inner ui-li"><div class="ui-btn-text">
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#manageAccountsList" class="cisco-nav-button ui_manage_accounts_button ui-link-inherit">Konten verwalten<span class="manageCount ui-li-count ui-btn-corner-all ui-btn-up-b">165</span></a>
+        </div></div></li>
+        <li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="false" data-iconpos="right" data-theme="a" class="ui-btn ui-btn-up-a ui-btn-icon-right ui-li-has-arrow ui-li ui-li-has-count"><div class="ui-btn-inner ui-li"><div class="ui-btn-text">
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#approveAccountsList" class="cisco-nav-button ui_approve_accounts_button ui-link-inherit">Ausstehende Konten<span class="pendingCount ui-li-count ui-btn-corner-all ui-btn-up-b">0</span></a>
+        </div></div></li>
+        <li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="false" data-iconpos="right" data-theme="a" class="ui-btn ui-btn-up-a ui-btn-icon-right ui-li-has-arrow ui-li ui-li-has-count"><div class="ui-btn-inner ui-li"><div class="ui-btn-text">
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#notices" class="cisco-nav-button ui_notices_button ui-link-inherit">Mitteilungen<span class="jobCount ui-li-count ui-btn-corner-all ui-btn-up-b">0</span></a>
+        </div></div></li>
+        <li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="false" data-iconpos="right" data-theme="a" class="ui-btn ui-btn-up-a ui-btn-icon-right ui-li-has-arrow ui-li"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/help/b_spons_SponsorPortalUserGuide_en_us.html" target="_blank" class="ui-link-inherit">Hilfe</a></div></div></li>
+        <li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="false" data-iconpos="right" data-theme="a" class="ui-btn ui-btn-up-a ui-btn-icon-right ui-li-has-arrow ui-li ui-last-child"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/Logout.action?portal=227a7cd0-d76c-11e4-9f05-6cae8b6601b8" class="ui-link-inherit">Abmelden</a></div></div></li>
+    </ul></div>     
+    
+</div>
+<div style="display: none;"><!-- placeholder for cisco-desktop-menu-page-create --></div>
+<div class="ui-panel-content-wrap ui-body-a ui-panel-animate ui-panel-content-wrap-closed"><div data-role="header" data-theme="a" class="ui-header ui-bar-a" role="banner">
+        <div class="cisco-ise-banner">
+            <img src="./Sponsor-Startseite_files/TEMP_2646c1cae0f34d5d9d6874c853ee3df3logo_db_arcsight.png" id="ui_desktop_logo" class="cisco-ise cisco-ise-logo-image" alt="">
+<img src="./Sponsor-Startseite_files/mobile-logo.png" id="ui_mobile_logo" class="cisco-ise cisco-ise-logo-image" alt="">
+<h3 id="ui_banner_label" class="cisco-ise cisco-ise-banner-label">WLAN für Gäste</h3>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#cisco-mobile-menu-page-create" data-role="button" data-icon="bars" data-iconpos="notext" class="cisco-mobile-menu-button ui-btn-right ui-btn ui-btn-up-a ui-shadow ui-btn-corner-all ui-btn-icon-notext" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="a" title="Menu"><span class="ui-btn-inner"><span class="ui-btn-text">Menu</span><span class="ui-icon ui-icon-bars ui-icon-shadow">&nbsp;</span></span></a>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#cisco-desktop-menu-page-create" data-rel="popup" data-role="button" data-icon="arrow-d" data-iconpos="right" class="cisco-desktop-menu-button ui-btn-right ui-btn ui-btn-up-a ui-shadow ui-btn-corner-all ui-btn-icon-right" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="a" aria-haspopup="true" aria-owns="cisco-desktop-menu-page-create" aria-expanded="false"><span class="ui-btn-inner"><span class="ui-btn-text">Willkommen&nbsp;<span class="sponsorName">DanielaScherf</span></span><span class="ui-icon ui-icon-arrow-d ui-icon-shadow">&nbsp;</span></span></a>
+        </div>
+
+        </div><div data-role="content" data-theme="a" class="ui-content ui-body-a" role="main">
+        <div class="cisco-ise-body">
+            <div class="cisco-ise cisco-ise-content cisco-ise-main-content ui-corner-all ui-body-a ui-shadow">
+    <noscript>
+        &lt;p&gt;Sie m&amp;uuml;ssen JavaScript aktivieren, um diese Website nutzen zu k&amp;ouml;nnen.&lt;/p&gt;
+    </noscript>
+    <div class="cisco-ise-scriptable" style="display: block;">
+        <div class="cisco-navbar cisco-mobile-hidden ui-navbar ui-mini" data-role="navbar" role="navigation">
+    <ul class="ui-grid-c">
+        <li class="ui-block-a">
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#page-create" class="ui_create_accounts_button ui-btn-active ui-state-persist ui-btn ui-btn-up-a ui-btn-inline" data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="span" data-theme="a" data-inline="true"><span class="ui-btn-inner"><span class="ui-btn-text">Konten erstellen</span></span></a>
+        </li>
+        <li class="ui-block-b">
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#manageAccountsList" class="ui_manage_accounts_button ui-btn ui-btn-up-a ui-btn-inline" data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="span" data-theme="a" data-inline="true"><span class="ui-btn-inner"><span class="ui-btn-text"><div class="count-contain"><span class="count-label">Konten verwalten</span><span class="count-panel">(<span class="manageCount">165</span>)</span></div></span></span></a>
+
+        </li>
+        <li class="ui-block-c">
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#approveAccountsList" class="ui_approve_accounts_button ui-btn ui-btn-up-a ui-btn-inline" data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="span" data-theme="a" data-inline="true"><span class="ui-btn-inner"><span class="ui-btn-text"><div class="count-contain"><span class="count-label">Ausstehende Konten</span><span class="count-panel">(<span class="pendingCount">0</span>)</span></div></span></span></a>
+
+        </li>
+        <li class="ui-block-d">
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#notices" class="ui_notices_button ui-btn ui-btn-up-a ui-btn-inline" data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="span" data-theme="a" data-inline="true"><span class="ui-btn-inner"><span class="ui-btn-text"><div class="count-contain"><span class="count-label">Mitteilungen</span><span class="count-panel">(<span class="jobCount">0</span>)</span></div></span></span></a>
+
+        </li>
+    </ul>
+</div>
+<div class="create-accounts-content cisco-nav-content">
+        <div class="cisco-wizard-step create-step-expand cisco-wizard-step-active create-guest-type-step">
+            <div class="progressWizard cisco-ise-sponsor" id="ui_create_accounts_progress_wizard">
+    <div class="step-wrapper">
+    <div class="step-outer ">
+            <div class="ui-bar-a step-inner step-current">
+                    </div>
+            </div>
+    <div class="step-outer step-next">
+            <div class="step-gutter-left">
+                <div class="ui-content ui-body-a step-connector"></div>
+            </div><div class="ui-content ui-bar-a step-inner">
+                                <div class="step-core ui-body-a"></div>
+                        </div>
+                    </div>
+    <div class="step-outer step-next">
+            <div class="step-gutter-left">
+                <div class="ui-content ui-body-a step-connector"></div>
+            </div><div class="ui-content ui-bar-a step-inner">
+                                <div class="step-core ui-body-a"></div>
+                        </div>
+                    </div>
+    </div>
+</div><h2>Gasttyp:</h2>
+                <span id="guest-type" name="Freier Tageszugang WLAN für Gäste / Free Wi-Fi access for Guests"></span>
+                <div class="content" id="availableGuestTypes"><div data-role="fieldcontain" style="display: none;"><div class="ui-select"><div data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-icon="arrow-d" data-iconpos="right" data-theme="a" data-mini="true" class="ui-btn ui-btn-up-a ui-shadow ui-btn-corner-all ui-mini ui-btn-icon-right"><span class="ui-btn-inner"><span class="ui-btn-text"><span>Freier Tageszugang WLAN für Gäste / Free Wi-Fi access for Guests</span></span><span class="ui-icon ui-icon-arrow-d ui-icon-shadow">&nbsp;</span></span><select data-mini="true" guest-type-select="true"><option guest-type-indicator="true" form-to-submit="fields_f625a6e2-d76c-11e4-9f05-6cae8b6601b8|access_f625a6e2-d76c-11e4-9f05-6cae8b6601b8" guest-type="f625a6e2-d76c-11e4-9f05-6cae8b6601b8" name="Freier Tageszugang WLAN für Gäste / Free Wi-Fi access for Guests">Freier Tageszugang WLAN für Gäste / Free Wi-Fi access for Guests</option></select></div></div></div><span>Freier Tageszugang WLAN für Gäste / Free Wi-Fi access for Guests</span></div>
+                <div class="guest-type-description" style="visibility: visible;">
+                    <div class="max-devices-description">
+                        Maximale Anzahl von Geräten, die eine Verbindung herstellen können:&nbsp;<span class="count">1</span>
+                    </div>
+                    <div class="max-duration-description">
+                        Maximale Zugriffsdauer:&nbsp;<span class="count">24 Stunden</span>
+                    </div>
+                    <div class="access-allowed-description" style="display: none;">
+                        Gestatteter Zugriff:<ul></ul>
+                    </div>
+                </div>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" data-role="button" class="cisco-wizard-next-button ui-btn ui-btn-up-a ui-shadow ui-btn-corner-all ui-mini" data-mini="true" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="a"><span class="ui-btn-inner"><span class="ui-btn-text">Weiter</span></span></a>
+        </div>
+        <div class="cisco-wizard-step create-step-expand ui-panel-left create-guest-info-step">
+            <div class="progressWizard cisco-ise-sponsor" id="ui_create_accounts_progress_wizard">
+    <div class="step-wrapper">
+    <div class="step-outer ">
+            <div class="ui-content
+                     ui-bar-a 
+                    step-inner step-done"></div>
+            </div>
+    <div class="step-outer step-next">
+            <div class="step-gutter-left">
+                <div class="ui-content ui-body-a step-connector"></div>
+            </div><div class="ui-bar-a step-inner step-current">
+                    </div>
+            </div>
+    <div class="step-outer step-next">
+            <div class="step-gutter-left">
+                <div class="ui-content ui-body-a step-connector"></div>
+            </div><div class="ui-content ui-bar-a step-inner">
+                                <div class="step-core ui-body-a"></div>
+                        </div>
+                    </div>
+    </div>
+</div><h2>Gastinformationen</h2>
+			<div data-role="navbar" data-type="horizontal" control-type="guestinfo" id="createGuestsTabControls" class="ui-screen-hidden ui-navbar ui-mini" role="navigation">
+    		<ul class="ui-grid-solo">
+		    	<li class="ui-block-a"><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" data-tab-class="createKnown" class="ui-btn-active ui-btn ui-btn-up-a ui-btn-inline" prepare-page-validation="access_f625a6e2-d76c-11e4-9f05-6cae8b6601b8" server-success="{&#39;handler&#39;:&#39;cisco.ise.sponsor.pages.home.createSuccessHandler&#39;}" server-error="{&#39;handler&#39;:&#39;cisco.ise.sponsor.pages.home.createServerError&#39;}" create-link-change="createKnownAccountsSummary" data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="span" data-theme="a" data-inline="true" form-to-submit="fields_f625a6e2-d76c-11e4-9f05-6cae8b6601b8|access_f625a6e2-d76c-11e4-9f05-6cae8b6601b8"><span class="ui-btn-inner"><span class="ui-btn-text">Bekannt</span></span></a></li>
+		    	</ul>
+
+	        </div>
+			<div class="tab-content">
+	                <span id="knownGuests">
+	                <span id="knownGuestsContent">
+	                    <div class="createKnown" style="display: block;">
+                            <span id="createKnownGuestAttributes"><form class="form-horizontal" guest-field-form="true" id="fields_f625a6e2-d76c-11e4-9f05-6cae8b6601b8" guesttype="f625a6e2-d76c-11e4-9f05-6cae8b6601b8" novalidate="novalidate"><div data-role="fieldcontain" key="firstName" custom="false" class="ui-field-contain ui-body ui-br"><label for="f625a6e2-d76c-11e4-9f05-6cae8b6601b88165eb50-c649-11e4-ace1-6cae8b6608fc" class="ui-input-text">Vorname:* </label><div class="ui-input-text ui-shadow-inset ui-corner-all ui-btn-shadow ui-body-a ui-mini"><input maxlength="64" data-mini="true" type="text" id="f625a6e2-d76c-11e4-9f05-6cae8b6601b88165eb50-c649-11e4-ace1-6cae8b6608fc" class="firstName  required text ui-input-text ui-body-a" attribute-type="TEXT" placeholder="" name="firstName"></div></div><div data-role="fieldcontain" key="lastName" custom="false" class="ui-field-contain ui-body ui-br"><label for="f625a6e2-d76c-11e4-9f05-6cae8b6601b881679900-c649-11e4-ace1-6cae8b6608fc" class="ui-input-text">Nachname:* </label><div class="ui-input-text ui-shadow-inset ui-corner-all ui-btn-shadow ui-body-a ui-mini"><input maxlength="64" data-mini="true" type="text" id="f625a6e2-d76c-11e4-9f05-6cae8b6601b881679900-c649-11e4-ace1-6cae8b6608fc" class="lastName  required text ui-input-text ui-body-a" attribute-type="TEXT" placeholder="" name="lastName"></div></div><div data-role="fieldcontain" key="emailAddress" custom="false" class="ui-field-contain ui-body ui-br"><label for="f625a6e2-d76c-11e4-9f05-6cae8b6601b8816946b2-c649-11e4-ace1-6cae8b6608fc" class="ui-input-text">E-Mail-Adresse:* </label><div class="ui-input-text ui-shadow-inset ui-corner-all ui-btn-shadow ui-body-a ui-mini"><input maxlength="64" data-mini="true" type="text" id="f625a6e2-d76c-11e4-9f05-6cae8b6601b8816946b2-c649-11e4-ace1-6cae8b6608fc" class="emailAddress  required email ui-input-text ui-body-a" attribute-type="EMAIL" placeholder="" name="emailAddress"></div></div><div data-role="fieldcontain" key="phoneNumber" custom="false" class="ui-field-contain ui-body ui-br"><label for="f625a6e2-d76c-11e4-9f05-6cae8b6601b8816a7f30-c649-11e4-ace1-6cae8b6608fc" class="ui-input-text">Telefonnummer:* </label><div class="ui-input-text ui-shadow-inset ui-corner-all ui-btn-shadow ui-body-a ui-mini"><input data-mini="true" type="text" id="f625a6e2-d76c-11e4-9f05-6cae8b6601b8816a7f30-c649-11e4-ace1-6cae8b6608fc" class="phoneNumber  required phone ui-input-text ui-body-a" attribute-type="PHONE" placeholder="" name="phoneNumber"></div></div><div data-role="fieldcontain" key="company" custom="false" class="ui-field-contain ui-body ui-br"><label for="f625a6e2-d76c-11e4-9f05-6cae8b6601b8816c53f0-c649-11e4-ace1-6cae8b6608fc" class="ui-input-text">Unternehmen:* </label><div class="ui-input-text ui-shadow-inset ui-corner-all ui-btn-shadow ui-body-a ui-mini"><input maxlength="256" data-mini="true" type="text" id="f625a6e2-d76c-11e4-9f05-6cae8b6601b8816c53f0-c649-11e4-ace1-6cae8b6608fc" class="company  required text ui-input-text ui-body-a" attribute-type="TEXT" placeholder="" name="company"></div></div><div data-role="fieldcontain" key="personBeingVisited" custom="false" class="ui-field-contain ui-body ui-br"><label for="f625a6e2-d76c-11e4-9f05-6cae8b6601b88170e7d0-c649-11e4-ace1-6cae8b6608fc" class="ui-input-text">Besuchte Person (E-Mail):* </label><div class="ui-input-text ui-shadow-inset ui-corner-all ui-btn-shadow ui-body-a ui-mini"><input maxlength="64" data-mini="true" type="text" id="f625a6e2-d76c-11e4-9f05-6cae8b6601b88170e7d0-c649-11e4-ace1-6cae8b6608fc" class="personBeingVisited  required email ui-input-text ui-body-a" attribute-type="EMAIL" placeholder="" name="personBeingVisited"></div></div><div data-role="fieldcontain" key="guestLanguage" class="ui-field-contain ui-body ui-br"><label for="f625a6e2-d76c-11e4-9f05-6cae8b6601b8language" class="content text-left ui-select">Sprache: </label><div class="ui-select"><div data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-icon="arrow-d" data-iconpos="right" data-theme="a" data-mini="true" class="ui-btn ui-shadow ui-btn-corner-all ui-mini ui-btn-icon-right ui-btn-up-a"><span class="ui-btn-inner"><span class="ui-btn-text"><span>German - Deutsch</span></span><span class="ui-icon ui-icon-arrow-d ui-icon-shadow">&nbsp;</span></span><select data-mini="true" id="f625a6e2-d76c-11e4-9f05-6cae8b6601b8language" style="display:inline" name="language"><option value="German">German - Deutsch</option><option value="ChineseSimplified">ChineseSimplified - 简体中文</option><option value="ChineseTraditional">ChineseTraditional - 繁體中文</option><option value="Czech">Czech - Čeština</option><option value="Dutch">Dutch - Nederlands</option><option value="English">English - English</option><option value="French">French - Français</option><option value="Hungarian">Hungarian - Magyar</option><option value="Italian">Italian - Italiano</option><option value="Japanese">Japanese - 日本語</option><option value="Korean">Korean - 한국어</option><option value="Polish">Polish - polski</option><option value="Portuguese">Portuguese - Português</option><option value="Russian">Russian - Русский</option><option value="Spanish">Spanish - Español</option></select></div></div></div></form></span>
+	                    </div>
+						</span>
+	                </span>
+	         </div>
+
+			<div class="cisco-ise-form-buttons two-button-layout">
+				<a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" class="cisco-wizard-prev-button ui-btn ui-btn-up-a ui-shadow ui-btn-corner-all ui-mini" data-role="button" data-mini="true" id="ui_create_known_previous_button" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="a"><span class="ui-btn-inner"><span class="ui-btn-text">Zurück</span></span></a>
+			    <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" class="cisco-desktop-hidden ui-btn ui-btn-up-b ui-shadow ui-btn-corner-all ui-mini" data-role="button" data-mini="true" data-theme="b" page-validation="fields_f625a6e2-d76c-11e4-9f05-6cae8b6601b8|access_f625a6e2-d76c-11e4-9f05-6cae8b6601b8" id="ui_create_known_next_button" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span"><span class="ui-btn-inner"><span class="ui-btn-text">Weiter</span></span></a>
+			</div>
+
+        </div>
+        <div class="cisco-wizard-step create-step-expand ui-panel-right create-access-info-step">
+            <div class="progressWizard cisco-ise-sponsor" id="ui_create_accounts_access_info_progress_wizard">
+    <div class="step-wrapper">
+    <div class="step-outer ">
+            <div class="ui-content
+                     ui-bar-a 
+                    step-inner step-done"></div>
+            </div>
+    <div class="step-outer step-next">
+            <div class="step-gutter-left">
+                <div class="ui-content ui-body-a step-connector"></div>
+            </div><div class="ui-content
+                     ui-bar-a 
+                    step-inner step-done"></div>
+            </div>
+    <div class="step-outer step-next">
+            <div class="step-gutter-left">
+                <div class="ui-content ui-body-a step-connector"></div>
+            </div><div class="ui-bar-a step-inner step-current">
+                    </div>
+            </div>
+    </div>
+</div><h2>Zugriffsinformationen</h2>
+            <span id="accessTimeContainer">
+		        	<span id="accessTimeContent"><form class="form-horizontal" guest-access-form="true" id="access_f625a6e2-d76c-11e4-9f05-6cae8b6601b8" guesttype="f625a6e2-d76c-11e4-9f05-6cae8b6601b8" novalidate="novalidate"><div data-role="fieldcontain" class="ui-field-contain ui-body ui-br"><label class="content text-left ui-input-text" style="float:left" for="1443269564474f625a6e2-d76c-11e4-9f05-6cae8b6601b8days">Dauer:* </label><div class="ui-grid-a" style="display:block-inline;">   <div class="ui-block-a"><div class="ui-input-text ui-shadow-inset ui-corner-all ui-btn-shadow ui-body-a ui-mini"><input data-mini="true" id="1443269564474f625a6e2-d76c-11e4-9f05-6cae8b6601b8days" name="days" min="1" max="24" unit="HOURS" class="required digits ui-input-text ui-body-a" type="text" value="24"></div></div>   <div class="ui-block-b"><span class="help-inline">Stunden (Maximum:24)</span></div></div></div><table class="dateTimeGrid">    <tbody><tr>        <td class="colLeft">            <label for="1443269564474f625a6e2-d76c-11e4-9f05-6cae8b6601b8from-date" class="ui-input-text" style="vertical-align: middle;">Vom (jjjj-mm-tt) *</label>                <div class="ui-input-text ui-shadow-inset ui-corner-all ui-btn-shadow ui-body-a ui-mini"><div class="ui-input-datebox ui-corner-all ui-mini ui-body-a" style="border: none;"><input id="1443269564474f625a6e2-d76c-11e4-9f05-6cae8b6601b8from-date" data-mini="true" name="from-date" type="text" data-role="datebox" data-options="{&quot;highDates&quot;: [&quot;2015-09-26&quot;],&quot;calHighToday&quot;: false,&quot;overrideMonthsOfYear&quot;:[&quot;Januar&quot;,&quot;Februar&quot;,&quot;März&quot;,&quot;April&quot;,&quot;Mai&quot;,&quot;Juni&quot;,&quot;Juli&quot;,&quot;August&quot;,&quot;September&quot;,&quot;Oktober&quot;,&quot;November&quot;,&quot;Dezember&quot;],&quot;overrideDaysOfWeekShort&quot;:[&quot;So&quot;,&quot;Mo&quot;,&quot;Di&quot;,&quot;Mi&quot;,&quot;Do&quot;,&quot;Fr&quot;,&quot;Sa&quot;],&quot;overrideTitleDateDialogLabel&quot;:&quot;Datum einstellen&quot;,&quot;overrideCalHeaderFormat&quot;:&quot;%B %Y&quot;,&quot;blackDays&quot;:[],&quot;highDays&quot;:[0,1,2,3,4,5,6],&quot;mode&quot;: &quot;calbox&quot;,&quot;focusMode&quot;: false, &quot;calControlGroup&quot;: true,&quot;afterToday&quot;:true }" class="required fromrange ymd ui-input-text ui-body-a"><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" class="ui-input-clear ui-btn ui-btn-up-a ui-shadow ui-btn-corner-all ui-btn-icon-notext" title="Open Date Picker" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-icon="grid" data-iconpos="notext" data-theme="a" style="vertical-align: middle; display: inline-block;"><span class="ui-btn-inner"><span class="ui-btn-text">Open Date Picker</span><span class="ui-icon ui-icon-grid ui-icon-shadow">&nbsp;</span></span></a></div></div>    </td>    <td class="colRight">        <label for="1443269564474f625a6e2-d76c-11e4-9f05-6cae8b6601b8from-time" class="ui-input-text" style="vertical-align: middle;">Startzeit *</label>        <div class="ui-input-text ui-shadow-inset ui-corner-all ui-btn-shadow ui-body-a ui-mini"><div class="ui-input-datebox ui-corner-all ui-mini ui-body-a" style="border: none;"><input data-mini="true" class="time ui-input-text ui-body-a" required="" name="from-time" data-role="datebox" id="1443269564474f625a6e2-d76c-11e4-9f05-6cae8b6601b8from-time" data-options="{&quot;overrideSetTimeButtonLabel&quot;:&quot;Zeit einstellen&quot;,&quot;overrideTitleTimeDialogLabel&quot;:&quot;Zeit w&amp;auml;hlen&quot;,&quot;focusMode&quot;: false,&quot;mode&quot;: &quot;timebox&quot;,&quot;themeHeader&quot;:&quot;b&quot;}"><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" class="ui-input-clear ui-btn ui-btn-up-a ui-shadow ui-btn-corner-all ui-btn-icon-notext" title="Open Date Picker" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-icon="grid" data-iconpos="notext" data-theme="a" style="vertical-align: middle; display: inline-block;"><span class="ui-btn-inner"><span class="ui-btn-text">Open Date Picker</span><span class="ui-icon ui-icon-grid ui-icon-shadow">&nbsp;</span></span></a></div></div>       </td>   </tr>   <tr>       <td class="colLeft">           <label for="1443269564474f625a6e2-d76c-11e4-9f05-6cae8b6601b8to-date" class="ui-input-text" style="vertical-align: middle;">Bis zum (jjjj-mm-tt) *</label>                <div class="ui-input-text ui-shadow-inset ui-corner-all ui-btn-shadow ui-body-a ui-mini"><div class="ui-input-datebox ui-corner-all ui-mini ui-body-a" style="border: none;"><input id="1443269564474f625a6e2-d76c-11e4-9f05-6cae8b6601b8to-date" data-mini="true" name="to-date" type="text" data-role="datebox" data-options="{&quot;calHighToday&quot;: false,&quot;overrideMonthsOfYear&quot;:[&quot;Januar&quot;,&quot;Februar&quot;,&quot;März&quot;,&quot;April&quot;,&quot;Mai&quot;,&quot;Juni&quot;,&quot;Juli&quot;,&quot;August&quot;,&quot;September&quot;,&quot;Oktober&quot;,&quot;November&quot;,&quot;Dezember&quot;],&quot;overrideDaysOfWeekShort&quot;:[&quot;So&quot;,&quot;Mo&quot;,&quot;Di&quot;,&quot;Mi&quot;,&quot;Do&quot;,&quot;Fr&quot;,&quot;Sa&quot;],&quot;overrideTitleDateDialogLabel&quot;:&quot;Datum einstellen&quot;,&quot;overrideCalHeaderFormat&quot;:&quot;%B %Y&quot;,&quot;blackDays&quot;:[],&quot;mode&quot;: &quot;calbox&quot;,&quot;focusMode&quot;: false, &quot;calControlGroup&quot;: true,&quot;afterToday&quot;:true }" class="required torange ymd ui-input-text ui-body-a"><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" class="ui-input-clear ui-btn ui-btn-up-a ui-shadow ui-btn-corner-all ui-btn-icon-notext" title="Open Date Picker" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-icon="grid" data-iconpos="notext" data-theme="a" style="vertical-align: middle; display: inline-block;"><span class="ui-btn-inner"><span class="ui-btn-text">Open Date Picker</span><span class="ui-icon ui-icon-grid ui-icon-shadow">&nbsp;</span></span></a></div></div>    </td>    <td class="colRight">        <label for="1443269564474f625a6e2-d76c-11e4-9f05-6cae8b6601b8to-time" class="ui-input-text" style="vertical-align: middle;">Endzeit *</label>        <div class="ui-input-text ui-shadow-inset ui-corner-all ui-btn-shadow ui-body-a ui-mini"><div class="ui-input-datebox ui-corner-all ui-mini ui-body-a" style="border: none;"><input data-mini="true" class="time ui-input-text ui-body-a" name="to-time" data-role="datebox" required="" id="1443269564474f625a6e2-d76c-11e4-9f05-6cae8b6601b8to-time" data-options="{&quot;overrideSetTimeButtonLabel&quot;:&quot;Zeit einstellen&quot;,&quot;overrideTitleTimeDialogLabel&quot;:&quot;Zeit w&amp;auml;hlen&quot;,&quot;focusMode&quot;: false,&quot;mode&quot;: &quot;timebox&quot;,&quot;themeHeader&quot;:&quot;b&quot;}"><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" class="ui-input-clear ui-btn ui-btn-up-a ui-shadow ui-btn-corner-all ui-btn-icon-notext" title="Open Date Picker" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-icon="grid" data-iconpos="notext" data-theme="a" style="vertical-align: middle; display: inline-block;"><span class="ui-btn-inner"><span class="ui-btn-text">Open Date Picker</span><span class="ui-icon ui-icon-grid ui-icon-shadow">&nbsp;</span></span></a></div></div>       </td>   </tr></tbody></table><div data-role="fieldcontain" key="location" class="ui-field-contain ui-body ui-br" style="display: none;"><label class="content text-left ui-select" for="1443269564474f625a6e2-d76c-11e4-9f05-6cae8b6601b8location">Ort:</label><div class="ui-select"><div data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-icon="arrow-d" data-iconpos="right" data-theme="a" data-mini="true" class="ui-btn ui-btn-up-a ui-shadow ui-btn-corner-all ui-mini ui-btn-icon-right"><span class="ui-btn-inner"><span class="ui-btn-text"><span>Deutschland</span></span><span class="ui-icon ui-icon-arrow-d ui-icon-shadow">&nbsp;</span></span><select data-mini="true" style="display:inline" id="1443269564474f625a6e2-d76c-11e4-9f05-6cae8b6601b8location" name="location"><option value="Deutschland">Deutschland</option></select></div></div></div><div data-role="fieldcontain" key="ssid" class="ui-field-contain ui-body ui-br" style="display: none;"><label class="content text-left ui-select" for="1443269564474f625a6e2-d76c-11e4-9f05-6cae8b6601b8ssid">SSID:</label><div class="ui-select"><div data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-icon="arrow-d" data-iconpos="right" data-theme="a" data-mini="true" class="ui-btn ui-btn-up-a ui-shadow ui-btn-corner-all ui-mini ui-btn-icon-right"><span class="ui-btn-inner"><span class="ui-btn-text"><span>dbs4guest</span></span><span class="ui-icon ui-icon-arrow-d ui-icon-shadow">&nbsp;</span></span><select data-mini="true" style="display:inline" id="1443269564474f625a6e2-d76c-11e4-9f05-6cae8b6601b8ssid" name="ssid"><option value="dbs4guest">dbs4guest</option></select></div></div></div></form></span>
+		        </span>
+                <div class="cisco-ise-form-buttons">
+                    <a class="cisco-wizard-prev-button ui-btn ui-btn-up-a ui-shadow ui-btn-corner-all ui-mini" href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" data-role="button" data-mini="true" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="a"><span class="ui-btn-inner"><span class="ui-btn-text">Zurück</span></span></a>
+                    <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" id="createButton" pre-submit="cisco.ise.sponsor.pages.home.prepareCreateFields" class="ui-btn-active ui-btn ui-shadow ui-btn-corner-all ui-mini ui-btn-inline ui-btn-up-a" data-role="button" data-mini="true" data-inline="true" server-operation="createKnown" form-to-submit="fields_f625a6e2-d76c-11e4-9f05-6cae8b6601b8|access_f625a6e2-d76c-11e4-9f05-6cae8b6601b8" page-validation="fields_f625a6e2-d76c-11e4-9f05-6cae8b6601b8|access_f625a6e2-d76c-11e4-9f05-6cae8b6601b8" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="a" redirect="#createKnownAccountsSummary" job-redirect="#undefined" validate="fields_f625a6e2-d76c-11e4-9f05-6cae8b6601b8|access_f625a6e2-d76c-11e4-9f05-6cae8b6601b8" server-success="{&#39;handler&#39;:&#39;cisco.ise.sponsor.pages.home.createSuccessHandler&#39;}" server-error="{&#39;handler&#39;:&#39;cisco.ise.sponsor.pages.home.createServerError&#39;}"><span class="ui-btn-inner"><span class="ui-btn-text">Erstellen</span></span></a>
+                </div>
+                <div class="cisco-ise-form-buttons">
+                        <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" id="importButton" manual-form="importForm" pre-submit="cisco.ise.sponsor.pages.home.prepareCreateFields" class="ui-btn-active ui-btn ui-btn-up-a ui-shadow ui-btn-corner-all ui-mini ui-btn-inline" data-role="button" data-mini="true" data-inline="true" server-operation="createImport" validate="importForm" page-validation="importForm" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="a" style="display: none;"><span class="ui-btn-inner"><span class="ui-btn-text">Importieren</span></span></a>
+               </div>
+
+        </div>
+
+
+
+
+
+    </div>
+<div class="cisco-div-extender"></div>
+    </div>
+</div>
+<div class="cisco-ise-footer">
+    <div class="cisco-ise-footer-container">
+    <div class="cisco-footer-link cisco-footer-link-right cisco-footer-link-center">
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/help/b_spons_SponsorPortalUserGuide_en_us.html" class="ui-link" target="_blank">Hilfe</a>
+    </div></div>
+</div></div>
+    </div></div>
+    
+<div class="ui-screen-hidden ui-popup-screen" id="cisco-desktop-menu-page-create-screen"></div><div class="ui-popup-container ui-popup-hidden" id="cisco-desktop-menu-page-create-popup"><div data-role="popup" id="cisco-desktop-menu-page-create" class="cisco-desktop-menu ui-popup ui-overlay-shadow ui-corner-all">
+    <ul data-role="listview" data-inset="true" data-icon="false" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+        <li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="false" data-iconpos="right" data-theme="a" class="ui-btn ui-btn-up-a ui-btn-icon-right ui-li-has-arrow ui-li ui-first-child"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/help/b_spons_SponsorPortalUserGuide_en_us.html" target="_blank" class="ui-link-inherit">Hilfe</a></div></div></li>
+        <li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="false" data-iconpos="right" data-theme="a" class="ui-btn ui-btn-up-a ui-btn-icon-right ui-li-has-arrow ui-li ui-last-child"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/Logout.action?portal=227a7cd0-d76c-11e4-9f05-6cae8b6601b8" class="ui-link-inherit">Abmelden</a></div></div></li>
+    </ul>
+</div></div><div class="ui-panel-dismiss" data-panelid="cisco-mobile-menu-page-create"></div></div>
+<div data-role="page" data-theme="a" id="smsJobSummary" class="page-home" data-url="smsJobSummary">
+
+    <div id="cisco-mobile-menu-smsJobSummary" class="cisco-mobile-menu side_panel" data-role="panel" data-display="overlay" data-position="right" data-theme="a">
+    <div class="ui-panel-welcome-message">
+    	<p>Willkommen&nbsp;DanielaScherf</p>
+    </div>     
+    <ul data-role="listview" data-icon="false">
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#page-create" class="cisco-nav-button ui_create_accounts_button">Konten erstellen</a>
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#manageAccountsList" class="cisco-nav-button ui_manage_accounts_button">Konten verwalten<span class="manageCount ui-li-count ui-btn-up-b">165</span></a>
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#approveAccountsList" class="cisco-nav-button ui_approve_accounts_button">Ausstehende Konten<span class="pendingCount ui-li-count ui-btn-up-b">0</span></a>
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#notices" class="cisco-nav-button ui_notices_button">Mitteilungen<span class="jobCount ui-li-count ui-btn-up-b">0</span></a>
+        </li>
+        <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/help/b_spons_SponsorPortalUserGuide_en_us.html" target="_blank">Hilfe</a></li>
+        <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/Logout.action?portal=227a7cd0-d76c-11e4-9f05-6cae8b6601b8">Abmelden</a></li>
+    </ul>
+</div>
+<div data-role="popup" id="cisco-desktop-menu-smsJobSummary" class="cisco-desktop-menu">
+    <ul data-role="listview" data-inset="true" data-icon="false">
+        <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/help/b_spons_SponsorPortalUserGuide_en_us.html" target="_blank">Hilfe</a></li>
+        <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/Logout.action?portal=227a7cd0-d76c-11e4-9f05-6cae8b6601b8">Abmelden</a></li>
+    </ul>
+</div>
+<div data-role="header" data-theme="a" class="ui-header ui-bar-a">
+        <div class="cisco-ise-banner">
+            <img src="./Sponsor-Startseite_files/TEMP_2646c1cae0f34d5d9d6874c853ee3df3logo_db_arcsight.png" id="ui_desktop_logo" class="cisco-ise cisco-ise-logo-image" alt="">
+<img src="./Sponsor-Startseite_files/mobile-logo.png" id="ui_mobile_logo" class="cisco-ise cisco-ise-logo-image" alt="">
+<h3 id="ui_banner_label" class="cisco-ise cisco-ise-banner-label">WLAN für Gäste</h3>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#cisco-mobile-menu-smsJobSummary" data-role="button" data-icon="bars" data-iconpos="notext" class="cisco-mobile-menu-button ui-btn-right">Menu</a>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#cisco-desktop-menu-smsJobSummary" data-rel="popup" data-role="button" data-icon="arrow-d" data-iconpos="right" class="cisco-desktop-menu-button ui-btn-right">Willkommen&nbsp;<span class="sponsorName">DanielaScherf</span></a>
+        </div>
+
+        </div>
+    <div data-role="content" data-theme="a" class="ui-content ui-body-a">
+        <div class="cisco-ise-body">
+            <div class="cisco-ise cisco-ise-content cisco-ise-main-content ui-corner-all ui-body-a ui-shadow">
+    <noscript>
+        &lt;p&gt;Sie m&amp;uuml;ssen JavaScript aktivieren, um diese Website nutzen zu k&amp;ouml;nnen.&lt;/p&gt;
+    </noscript>
+    <div class="cisco-ise-scriptable">
+        <div class="cisco-navbar cisco-mobile-hidden" data-role="navbar">
+    <ul>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#page-create" class="ui_create_accounts_button">Konten erstellen</a>
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#manageAccountsList" class="ui_manage_accounts_button"><div class="count-contain"><span class="count-label">Konten verwalten</span><span class="count-panel">(<span class="manageCount">165</span>)</span></div></a>
+
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#approveAccountsList" class="ui_approve_accounts_button"><div class="count-contain"><span class="count-label">Ausstehende Konten</span><span class="count-panel">(<span class="pendingCount">0</span>)</span></div></a>
+
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#notices" class="ui_notices_button"><div class="count-contain"><span class="count-label">Mitteilungen</span><span class="count-panel">(<span class="jobCount">0</span>)</span></div></a>
+
+        </li>
+    </ul>
+</div>
+<div data-role="navbar" id="ui_notices_sms_summary_nav">
+            <ul>
+                <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#notices" class="ui_notices_home_button">Fertig</a></li>
+                <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" class="noticesToolbarDelete">Mitteilung löschen</a></li>
+            </ul>
+         </div>
+    <div class="approve-accounts-content cisco-nav-content" selection-dependant="true">
+        <h4 class="content text-left job-message single-success" id="ui_sms_account_success_single_message" style="display: none;">SMS erfolgreich an Konto versandt.</h4>
+        <h4 class="content text-left job-message multi-success" id="ui_sms_account_success_multi_message" style="display: none;">SMS erfolgreich an ausgewählte Konten versandt.</h4>
+        <h4 class="content text-left job-message partial-success" id="ui_sms_account_partial_success_message" style="display: none;">Es sind einige Fehler aufgetreten. Anzahl der erfolgreich per SMS gesendeten Konten:<span></span></h4>
+        <h4 class="content text-left job-message failures-count" id="ui_sms_account_partial_failure_message" style="display: none;">Anzahl der Fehler:<span></span></h4>
+        <h4 class="content text-left job-message total-failure" id="ui_sms_account_total_failure_message" style="display: none;">Text konnte nicht verschickt werden.</h4>
+        <div class="content job-message dynamic-message" style="display: none;">
+            <h4 class="text-left error-message"></h4>
+            <ul class="error-details"></ul>
+        </div>
+
+    </div>
+
+
+<div class="cisco-div-extender"></div>
+    </div>
+</div>
+<div class="cisco-ise-footer">
+    <div class="cisco-ise-footer-container">
+    <div class="cisco-footer-link cisco-footer-link-right cisco-footer-link-center">
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/help/b_spons_SponsorPortalUserGuide_en_us.html" class="ui-link" target="_blank">Hilfe</a>
+    </div></div>
+</div></div>
+    </div>
+</div>
+<div data-role="page" data-theme="a" id="printJobSummary" class="page-home" data-url="printJobSummary">
+
+    <div id="cisco-mobile-menu-printJobSummary" class="cisco-mobile-menu side_panel" data-role="panel" data-display="overlay" data-position="right" data-theme="a">
+    <div class="ui-panel-welcome-message">
+    	<p>Willkommen&nbsp;DanielaScherf</p>
+    </div>     
+    <ul data-role="listview" data-icon="false">
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#page-create" class="cisco-nav-button ui_create_accounts_button">Konten erstellen</a>
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#manageAccountsList" class="cisco-nav-button ui_manage_accounts_button">Konten verwalten<span class="manageCount ui-li-count ui-btn-up-b">165</span></a>
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#approveAccountsList" class="cisco-nav-button ui_approve_accounts_button">Ausstehende Konten<span class="pendingCount ui-li-count ui-btn-up-b">0</span></a>
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#notices" class="cisco-nav-button ui_notices_button">Mitteilungen<span class="jobCount ui-li-count ui-btn-up-b">0</span></a>
+        </li>
+        <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/help/b_spons_SponsorPortalUserGuide_en_us.html" target="_blank">Hilfe</a></li>
+        <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/Logout.action?portal=227a7cd0-d76c-11e4-9f05-6cae8b6601b8">Abmelden</a></li>
+    </ul>
+</div>
+<div data-role="popup" id="cisco-desktop-menu-printJobSummary" class="cisco-desktop-menu">
+    <ul data-role="listview" data-inset="true" data-icon="false">
+        <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/help/b_spons_SponsorPortalUserGuide_en_us.html" target="_blank">Hilfe</a></li>
+        <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/Logout.action?portal=227a7cd0-d76c-11e4-9f05-6cae8b6601b8">Abmelden</a></li>
+    </ul>
+</div>
+<div data-role="header" data-theme="a" class="ui-header ui-bar-a">
+        <div class="cisco-ise-banner">
+            <img src="./Sponsor-Startseite_files/TEMP_2646c1cae0f34d5d9d6874c853ee3df3logo_db_arcsight.png" id="ui_desktop_logo" class="cisco-ise cisco-ise-logo-image" alt="">
+<img src="./Sponsor-Startseite_files/mobile-logo.png" id="ui_mobile_logo" class="cisco-ise cisco-ise-logo-image" alt="">
+<h3 id="ui_banner_label" class="cisco-ise cisco-ise-banner-label">WLAN für Gäste</h3>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#cisco-mobile-menu-printJobSummary" data-role="button" data-icon="bars" data-iconpos="notext" class="cisco-mobile-menu-button ui-btn-right">Menu</a>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#cisco-desktop-menu-printJobSummary" data-rel="popup" data-role="button" data-icon="arrow-d" data-iconpos="right" class="cisco-desktop-menu-button ui-btn-right">Willkommen&nbsp;<span class="sponsorName">DanielaScherf</span></a>
+        </div>
+
+        </div>
+    <div data-role="content" data-theme="a" class="ui-content ui-body-a">
+        <div class="cisco-ise-body">
+            <div class="cisco-ise cisco-ise-content cisco-ise-main-content ui-corner-all ui-body-a ui-shadow">
+    <noscript>
+        &lt;p&gt;Sie m&amp;uuml;ssen JavaScript aktivieren, um diese Website nutzen zu k&amp;ouml;nnen.&lt;/p&gt;
+    </noscript>
+    <div class="cisco-ise-scriptable">
+        <div class="cisco-navbar cisco-mobile-hidden" data-role="navbar">
+    <ul>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#page-create" class="ui_create_accounts_button">Konten erstellen</a>
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#manageAccountsList" class="ui_manage_accounts_button"><div class="count-contain"><span class="count-label">Konten verwalten</span><span class="count-panel">(<span class="manageCount">165</span>)</span></div></a>
+
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#approveAccountsList" class="ui_approve_accounts_button"><div class="count-contain"><span class="count-label">Ausstehende Konten</span><span class="count-panel">(<span class="pendingCount">0</span>)</span></div></a>
+
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#notices" class="ui_notices_button"><div class="count-contain"><span class="count-label">Mitteilungen</span><span class="count-panel">(<span class="jobCount">0</span>)</span></div></a>
+
+        </li>
+    </ul>
+</div>
+<div class="approve-accounts-content cisco-nav-content" selection-dependant="true">
+        <h4 class="content text-left job-message single-success" id="ui_print_account_success_single_message" style="display: none;">Konto erfolgreich gedruckt.</h4>
+        <h4 class="content text-left job-message multi-success" id="ui_print_account_success_multi_message" style="display: none;">Ausgewählte Konten erfolgreich gedruckt.</h4>
+        <h4 class="content text-left job-message partial-success" id="ui_print_account_partial_success_message" style="display: none;">Es sind einige Fehler aufgetreten. Anzahl der erfolgreich gedruckten Konten:<span></span></h4>
+        <h4 class="content text-left job-message failures-count" id="ui_print_account_partial_failure_message" style="display: none;">Anzahl der Fehler:<span></span></h4>
+        <h4 class="content text-left job-message total-failure" id="ui_print_account_total_failure_message" style="display: none;">Drucken nicht möglich.</h4>
+        <div class="content job-message dynamic-message" style="display: none;">
+            <h4 class="text-left error-message"></h4>
+            <ul class="error-details"></ul>
+        </div>
+    </div>
+    <div id="ui_notices_print_summary_nav">
+        <div class="cisco-ise-form-buttons two-button-layout">
+           <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" id="ui_account_action_print_button" data-role="button" data-mini="true">Drucken</a>
+           <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" class="noticesToolbarDelete" data-role="button" data-mini="true">Mitteilung löschen</a>
+        </div>
+        <div class="cisco-ise-form-buttons">
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#notices" class="ui_notices_home_button" data-role="button" data-mini="true">Fertig</a>
+        </div>
+    </div>
+<div class="cisco-div-extender"></div>
+    </div>
+</div>
+<div class="cisco-ise-footer">
+    <div class="cisco-ise-footer-container">
+    <div class="cisco-footer-link cisco-footer-link-right cisco-footer-link-center">
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/help/b_spons_SponsorPortalUserGuide_en_us.html" class="ui-link" target="_blank">Hilfe</a>
+    </div></div>
+</div></div>
+    </div>
+</div>
+<div data-role="page" data-theme="a" id="emailJobSummary" class="page-home" data-url="emailJobSummary">
+
+    <div id="cisco-mobile-menu-emailJobSummary" class="cisco-mobile-menu side_panel" data-role="panel" data-display="overlay" data-position="right" data-theme="a">
+    <div class="ui-panel-welcome-message">
+    	<p>Willkommen&nbsp;DanielaScherf</p>
+    </div>     
+    <ul data-role="listview" data-icon="false">
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#page-create" class="cisco-nav-button ui_create_accounts_button">Konten erstellen</a>
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#manageAccountsList" class="cisco-nav-button ui_manage_accounts_button">Konten verwalten<span class="manageCount ui-li-count ui-btn-up-b">165</span></a>
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#approveAccountsList" class="cisco-nav-button ui_approve_accounts_button">Ausstehende Konten<span class="pendingCount ui-li-count ui-btn-up-b">0</span></a>
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#notices" class="cisco-nav-button ui_notices_button">Mitteilungen<span class="jobCount ui-li-count ui-btn-up-b">0</span></a>
+        </li>
+        <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/help/b_spons_SponsorPortalUserGuide_en_us.html" target="_blank">Hilfe</a></li>
+        <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/Logout.action?portal=227a7cd0-d76c-11e4-9f05-6cae8b6601b8">Abmelden</a></li>
+    </ul>
+</div>
+<div data-role="popup" id="cisco-desktop-menu-emailJobSummary" class="cisco-desktop-menu">
+    <ul data-role="listview" data-inset="true" data-icon="false">
+        <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/help/b_spons_SponsorPortalUserGuide_en_us.html" target="_blank">Hilfe</a></li>
+        <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/Logout.action?portal=227a7cd0-d76c-11e4-9f05-6cae8b6601b8">Abmelden</a></li>
+    </ul>
+</div>
+<div data-role="header" data-theme="a" class="ui-header ui-bar-a">
+        <div class="cisco-ise-banner">
+            <img src="./Sponsor-Startseite_files/TEMP_2646c1cae0f34d5d9d6874c853ee3df3logo_db_arcsight.png" id="ui_desktop_logo" class="cisco-ise cisco-ise-logo-image" alt="">
+<img src="./Sponsor-Startseite_files/mobile-logo.png" id="ui_mobile_logo" class="cisco-ise cisco-ise-logo-image" alt="">
+<h3 id="ui_banner_label" class="cisco-ise cisco-ise-banner-label">WLAN für Gäste</h3>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#cisco-mobile-menu-emailJobSummary" data-role="button" data-icon="bars" data-iconpos="notext" class="cisco-mobile-menu-button ui-btn-right">Menu</a>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#cisco-desktop-menu-emailJobSummary" data-rel="popup" data-role="button" data-icon="arrow-d" data-iconpos="right" class="cisco-desktop-menu-button ui-btn-right">Willkommen&nbsp;<span class="sponsorName">DanielaScherf</span></a>
+        </div>
+
+        </div>
+    <div data-role="content" data-theme="a" class="ui-content ui-body-a">
+        <div class="cisco-ise-body">
+            <div class="cisco-ise cisco-ise-content cisco-ise-main-content ui-corner-all ui-body-a ui-shadow">
+    <noscript>
+        &lt;p&gt;Sie m&amp;uuml;ssen JavaScript aktivieren, um diese Website nutzen zu k&amp;ouml;nnen.&lt;/p&gt;
+    </noscript>
+    <div class="cisco-ise-scriptable">
+        <div class="cisco-navbar cisco-mobile-hidden" data-role="navbar">
+    <ul>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#page-create" class="ui_create_accounts_button">Konten erstellen</a>
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#manageAccountsList" class="ui_manage_accounts_button"><div class="count-contain"><span class="count-label">Konten verwalten</span><span class="count-panel">(<span class="manageCount">165</span>)</span></div></a>
+
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#approveAccountsList" class="ui_approve_accounts_button"><div class="count-contain"><span class="count-label">Ausstehende Konten</span><span class="count-panel">(<span class="pendingCount">0</span>)</span></div></a>
+
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#notices" class="ui_notices_button"><div class="count-contain"><span class="count-label">Mitteilungen</span><span class="count-panel">(<span class="jobCount">0</span>)</span></div></a>
+
+        </li>
+    </ul>
+</div>
+<div data-role="navbar" id="ui_notices_email_summary_nav">
+            <ul>
+                <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#notices" class="ui_notices_home_button">Fertig</a></li>
+                <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" class="noticesToolbarDelete">Mitteilung löschen</a></li>
+            </ul>
+         </div>
+
+    <div class="approve-accounts-content cisco-nav-content" selection-dependant="true">
+        <h4 class="content text-left job-message single-success" id="ui_email_account_success_single_message" style="display: none;">E-Mail erfolgreich an Konto versandt.</h4>
+        <h4 class="content text-left job-message multi-success" id="ui_email_account_success_multi_message" style="display: none;">E-Mail erfolgreich an ausgewählte Konten versandt.</h4>
+        <h4 class="content text-left job-message partial-success" id="ui_email_account_partial_success_message" style="display: none;">Es sind einige Fehler aufgetreten. Anzahl der erfolgreich per E-Mail gesendeten Konten:<span></span></h4>
+        <h4 class="content text-left job-message failures-count" id="ui_email_account_partial_failure_message" style="display: none;">Anzahl der Fehler:<span></span></h4>
+        <h4 class="content text-left job-message total-failure" id="ui_email_account_total_failure_message" style="display: none;">E-Mail kann nicht gesendet werden.</h4>
+        <div class="content job-message dynamic-message" style="display: none;">
+            <h4 class="text-left error-message"></h4>
+            <ul class="error-details"></ul>
+        </div>
+    </div>
+<div class="cisco-div-extender"></div>
+    </div>
+</div>
+<div class="cisco-ise-footer">
+    <div class="cisco-ise-footer-container">
+    <div class="cisco-footer-link cisco-footer-link-right cisco-footer-link-center">
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/help/b_spons_SponsorPortalUserGuide_en_us.html" class="ui-link" target="_blank">Hilfe</a>
+    </div></div>
+</div></div>
+    </div>
+</div>
+<div data-role="page" data-theme="a" id="createRandomAccountsSummary" class="page-home" data-url="createRandomAccountsSummary">
+
+    <div id="cisco-mobile-menu-createRandomAccountsSummary" class="cisco-mobile-menu side_panel" data-role="panel" data-display="overlay" data-position="right" data-theme="a">
+    <div class="ui-panel-welcome-message">
+    	<p>Willkommen&nbsp;DanielaScherf</p>
+    </div>     
+    <ul data-role="listview" data-icon="false">
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#page-create" class="cisco-nav-button ui_create_accounts_button">Konten erstellen</a>
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#manageAccountsList" class="cisco-nav-button ui_manage_accounts_button">Konten verwalten<span class="manageCount ui-li-count ui-btn-up-b">165</span></a>
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#approveAccountsList" class="cisco-nav-button ui_approve_accounts_button">Ausstehende Konten<span class="pendingCount ui-li-count ui-btn-up-b">0</span></a>
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#notices" class="cisco-nav-button ui_notices_button">Mitteilungen<span class="jobCount ui-li-count ui-btn-up-b">0</span></a>
+        </li>
+        <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/help/b_spons_SponsorPortalUserGuide_en_us.html" target="_blank">Hilfe</a></li>
+        <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/Logout.action?portal=227a7cd0-d76c-11e4-9f05-6cae8b6601b8">Abmelden</a></li>
+    </ul>
+</div>
+<div data-role="popup" id="cisco-desktop-menu-createRandomAccountsSummary" class="cisco-desktop-menu">
+    <ul data-role="listview" data-inset="true" data-icon="false">
+        <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/help/b_spons_SponsorPortalUserGuide_en_us.html" target="_blank">Hilfe</a></li>
+        <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/Logout.action?portal=227a7cd0-d76c-11e4-9f05-6cae8b6601b8">Abmelden</a></li>
+    </ul>
+</div>
+<div data-role="header" data-theme="a" class="ui-header ui-bar-a">
+        <div class="cisco-ise-banner">
+            <img src="./Sponsor-Startseite_files/TEMP_2646c1cae0f34d5d9d6874c853ee3df3logo_db_arcsight.png" id="ui_desktop_logo" class="cisco-ise cisco-ise-logo-image" alt="">
+<img src="./Sponsor-Startseite_files/mobile-logo.png" id="ui_mobile_logo" class="cisco-ise cisco-ise-logo-image" alt="">
+<h3 id="ui_banner_label" class="cisco-ise cisco-ise-banner-label">WLAN für Gäste</h3>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#cisco-mobile-menu-createRandomAccountsSummary" data-role="button" data-icon="bars" data-iconpos="notext" class="cisco-mobile-menu-button ui-btn-right">Menu</a>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#cisco-desktop-menu-createRandomAccountsSummary" data-rel="popup" data-role="button" data-icon="arrow-d" data-iconpos="right" class="cisco-desktop-menu-button ui-btn-right">Willkommen&nbsp;<span class="sponsorName">DanielaScherf</span></a>
+        </div>
+
+        </div>
+    <div data-role="content" data-theme="a" class="ui-content ui-body-a">
+        <div class="cisco-ise-body">
+            <div class="cisco-ise cisco-ise-content cisco-ise-main-content ui-corner-all ui-body-a ui-shadow">
+    <noscript>
+        &lt;p&gt;Sie m&amp;uuml;ssen JavaScript aktivieren, um diese Website nutzen zu k&amp;ouml;nnen.&lt;/p&gt;
+    </noscript>
+    <div class="cisco-ise-scriptable">
+        <div class="cisco-navbar cisco-mobile-hidden" data-role="navbar">
+    <ul>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#page-create" class="ui_create_accounts_button">Konten erstellen</a>
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#manageAccountsList" class="ui_manage_accounts_button"><div class="count-contain"><span class="count-label">Konten verwalten</span><span class="count-panel">(<span class="manageCount">165</span>)</span></div></a>
+
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#approveAccountsList" class="ui_approve_accounts_button"><div class="count-contain"><span class="count-label">Ausstehende Konten</span><span class="count-panel">(<span class="pendingCount">0</span>)</span></div></a>
+
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#notices" class="ui_notices_button"><div class="count-contain"><span class="count-label">Mitteilungen</span><span class="count-panel">(<span class="jobCount">0</span>)</span></div></a>
+
+        </li>
+    </ul>
+</div>
+<div class="approve-accounts-content cisco-nav-content" selection-dependant="true">
+            <h2 id="ui_create_random_summary_content_title_label">Kontoinformationen</h2>
+            <div id="ui_notices_random_summary_nav">
+                <div class="cisco-ise-form-buttons two-button-layout">
+                    <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" id="ui_notices_random_print_button" data-role="button" data-mini="true">Drucken</a>
+                     <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" class="noticesToolbarDelete" data-role="button" data-mini="true">Mitteilung löschen</a>
+                </div>
+                <div class="cisco-ise-form-buttons">
+                    <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#notices" class="ui_notices_home_button" data-role="button" data-mini="true">Fertig</a>
+                </div>
+            </div>
+            <h4 class="content text-left job-message single-success" id="ui_create_random_success_single_message" style="display: none;">Zufälliges Konto erfolgreich erstellt.</h4>
+            <h4 class="content text-left job-message multi-success" id="ui_create_random_success_multi_message" style="display: none;">Zufällige Konten erfolgreich erstellt.</h4>
+            <h4 class="content text-left job-message partial-success" id="ui_create_random_partial_success_message" style="display: none;">Es sind einige Fehler aufgetreten. Anzahl der erstellten zufälligen Konten:<span></span></h4>
+            <h4 class="content text-left job-message failures-count" id="ui_create_random_partial_failure_message" style="display: none;">Anzahl der Fehler:<span></span></h4>
+            <h4 class="content text-left job-message total-failure" id="ui_create_random_total_failure_message" style="display: none;">Zufällige Konten konnten nicht erstellt werden.</h4>
+            <h4 class="content text-left job-message created-count" id="ui_notify_random_accounts_created_label" style="display: none;">Erstellte Konten: <span></span></h4>
+            <h4 class="content text-left job-message showing-count" id="ui_notify_random_accounts_showing_label" style="display: none;">Anzeige: <span></span></h4>
+
+            <div class="content job-message dynamic-message" style="display: none;">
+                <h4 class="text-left error-message"></h4>
+                <ul class="error-details"></ul>
+            </div>
+            <!--text-align:left-->
+            <div class="page_panel" style="">
+                <table id="create-random-accounts-summary" class="ui-body-b">
+                  <thead>
+                    <tr>
+                      <th class="ui-count-header">#</th>
+                      <th class="ui-user-name-header">Benutzername:</th>
+                      <th class="ui-password-header">Kennwort:</th>
+                    </tr>
+                  </thead>
+                  <tbody class="easy-read-display">
+                  </tbody>
+                </table>
+            </div>
+            <div data-role="navbar" id="ui_create_random_summary_nav">
+                <ul>
+                    <li selection-dependant="true"><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" id="ui_create_random_print_button">Drucken</a></li>
+                    <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#page-create">Fertig</a></li>
+                </ul>
+             </div>
+
+        </div>
+<div class="cisco-div-extender"></div>
+    </div>
+</div>
+<div class="cisco-ise-footer">
+    <div class="cisco-ise-footer-container">
+    <div class="cisco-footer-link cisco-footer-link-right cisco-footer-link-center">
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/help/b_spons_SponsorPortalUserGuide_en_us.html" class="ui-link" target="_blank">Hilfe</a>
+    </div></div>
+</div></div>
+    </div>
+</div>
+<div data-role="page" data-theme="a" id="createKnownAccountsSummary" class="page-home" data-url="createKnownAccountsSummary">
+
+    <div id="cisco-mobile-menu-createKnownAccountsSummary" class="cisco-mobile-menu side_panel" data-role="panel" data-display="overlay" data-position="right" data-theme="a">
+    <div class="ui-panel-welcome-message">
+    	<p>Willkommen&nbsp;DanielaScherf</p>
+    </div>     
+    <ul data-role="listview" data-icon="false">
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#page-create" class="cisco-nav-button ui_create_accounts_button">Konten erstellen</a>
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#manageAccountsList" class="cisco-nav-button ui_manage_accounts_button">Konten verwalten<span class="manageCount ui-li-count ui-btn-up-b">165</span></a>
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#approveAccountsList" class="cisco-nav-button ui_approve_accounts_button">Ausstehende Konten<span class="pendingCount ui-li-count ui-btn-up-b">0</span></a>
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#notices" class="cisco-nav-button ui_notices_button">Mitteilungen<span class="jobCount ui-li-count ui-btn-up-b">0</span></a>
+        </li>
+        <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/help/b_spons_SponsorPortalUserGuide_en_us.html" target="_blank">Hilfe</a></li>
+        <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/Logout.action?portal=227a7cd0-d76c-11e4-9f05-6cae8b6601b8">Abmelden</a></li>
+    </ul>
+</div>
+<div data-role="popup" id="cisco-desktop-menu-createKnownAccountsSummary" class="cisco-desktop-menu">
+    <ul data-role="listview" data-inset="true" data-icon="false">
+        <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/help/b_spons_SponsorPortalUserGuide_en_us.html" target="_blank">Hilfe</a></li>
+        <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/Logout.action?portal=227a7cd0-d76c-11e4-9f05-6cae8b6601b8">Abmelden</a></li>
+    </ul>
+</div>
+<div data-role="header" data-theme="a" class="ui-header ui-bar-a">
+        <div class="cisco-ise-banner">
+            <img src="./Sponsor-Startseite_files/TEMP_2646c1cae0f34d5d9d6874c853ee3df3logo_db_arcsight.png" id="ui_desktop_logo" class="cisco-ise cisco-ise-logo-image" alt="">
+<img src="./Sponsor-Startseite_files/mobile-logo.png" id="ui_mobile_logo" class="cisco-ise cisco-ise-logo-image" alt="">
+<h3 id="ui_banner_label" class="cisco-ise cisco-ise-banner-label">WLAN für Gäste</h3>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#cisco-mobile-menu-createKnownAccountsSummary" data-role="button" data-icon="bars" data-iconpos="notext" class="cisco-mobile-menu-button ui-btn-right">Menu</a>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#cisco-desktop-menu-createKnownAccountsSummary" data-rel="popup" data-role="button" data-icon="arrow-d" data-iconpos="right" class="cisco-desktop-menu-button ui-btn-right">Willkommen&nbsp;<span class="sponsorName">DanielaScherf</span></a>
+        </div>
+
+        </div>
+    <div data-role="content" data-theme="a" class="ui-content ui-body-a">
+        <div class="cisco-ise-body">
+            <div class="cisco-ise cisco-ise-content cisco-ise-main-content ui-corner-all ui-body-a ui-shadow">
+    <noscript>
+        &lt;p&gt;Sie m&amp;uuml;ssen JavaScript aktivieren, um diese Website nutzen zu k&amp;ouml;nnen.&lt;/p&gt;
+    </noscript>
+    <div class="cisco-ise-scriptable">
+        <div class="cisco-navbar cisco-mobile-hidden" data-role="navbar">
+    <ul>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#page-create" class="ui_create_accounts_button">Konten erstellen</a>
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#manageAccountsList" class="ui_manage_accounts_button"><div class="count-contain"><span class="count-label">Konten verwalten</span><span class="count-panel">(<span class="manageCount">165</span>)</span></div></a>
+
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#approveAccountsList" class="ui_approve_accounts_button"><div class="count-contain"><span class="count-label">Ausstehende Konten</span><span class="count-panel">(<span class="pendingCount">0</span>)</span></div></a>
+
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#notices" class="ui_notices_button"><div class="count-contain"><span class="count-label">Mitteilungen</span><span class="count-panel">(<span class="jobCount">0</span>)</span></div></a>
+
+        </li>
+    </ul>
+</div>
+<div class="approve-accounts-content cisco-nav-content" selection-dependant="true">
+        <div class="progressWizard cisco-ise-sponsor" id="ui_create_accounts_progress_wizard">
+    <div class="step-wrapper">
+    <div class="step-outer ">
+            <div class="ui-content
+                     ui-bar-a 
+                    step-inner step-done"></div>
+            </div>
+    <div class="step-outer step-next">
+            <div class="step-gutter-left">
+                <div class="ui-content ui-body-a step-connector"></div>
+            </div><div class="ui-content
+                     ui-bar-a 
+                    step-inner step-done"></div>
+            </div>
+    <div class="step-outer step-next">
+            <div class="step-gutter-left">
+                <div class="ui-content ui-body-a step-connector"></div>
+            </div><div class="ui-bar-a step-inner step-current">
+                    </div>
+            </div>
+    </div>
+</div><h2 id="ui_create_known_summary_success_message">Kontoinformationen</h2>
+
+        <div class="page_panel ui-body-b" style="text-align:left">
+        <p></p>
+        </div>
+    	<div data-role="navbar">
+			<ul>
+				<li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#createKnownAccountNotify">Benachrichtigen</a></li>
+				<li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#page-create">Fertig</a></li>
+			</ul>
+		 </div>
+    </div>
+<div class="cisco-div-extender"></div>
+    </div>
+</div>
+<div class="cisco-ise-footer">
+    <div class="cisco-ise-footer-container">
+    <div class="cisco-footer-link cisco-footer-link-right cisco-footer-link-center">
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/help/b_spons_SponsorPortalUserGuide_en_us.html" class="ui-link" target="_blank">Hilfe</a>
+    </div></div>
+</div></div>
+    </div>
+</div>
+<div data-role="page" data-theme="a" id="createImportAccountsSummary" class="page-home" data-url="createImportAccountsSummary">
+
+    <div id="cisco-mobile-menu-createImportAccountsSummary" class="cisco-mobile-menu side_panel" data-role="panel" data-display="overlay" data-position="right" data-theme="a">
+    <div class="ui-panel-welcome-message">
+    	<p>Willkommen&nbsp;DanielaScherf</p>
+    </div>     
+    <ul data-role="listview" data-icon="false">
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#page-create" class="cisco-nav-button ui_create_accounts_button">Konten erstellen</a>
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#manageAccountsList" class="cisco-nav-button ui_manage_accounts_button">Konten verwalten<span class="manageCount ui-li-count ui-btn-up-b">165</span></a>
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#approveAccountsList" class="cisco-nav-button ui_approve_accounts_button">Ausstehende Konten<span class="pendingCount ui-li-count ui-btn-up-b">0</span></a>
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#notices" class="cisco-nav-button ui_notices_button">Mitteilungen<span class="jobCount ui-li-count ui-btn-up-b">0</span></a>
+        </li>
+        <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/help/b_spons_SponsorPortalUserGuide_en_us.html" target="_blank">Hilfe</a></li>
+        <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/Logout.action?portal=227a7cd0-d76c-11e4-9f05-6cae8b6601b8">Abmelden</a></li>
+    </ul>
+</div>
+<div data-role="popup" id="cisco-desktop-menu-createImportAccountsSummary" class="cisco-desktop-menu">
+    <ul data-role="listview" data-inset="true" data-icon="false">
+        <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/help/b_spons_SponsorPortalUserGuide_en_us.html" target="_blank">Hilfe</a></li>
+        <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/Logout.action?portal=227a7cd0-d76c-11e4-9f05-6cae8b6601b8">Abmelden</a></li>
+    </ul>
+</div>
+<div data-role="header" data-theme="a" class="ui-header ui-bar-a">
+        <div class="cisco-ise-banner">
+            <img src="./Sponsor-Startseite_files/TEMP_2646c1cae0f34d5d9d6874c853ee3df3logo_db_arcsight.png" id="ui_desktop_logo" class="cisco-ise cisco-ise-logo-image" alt="">
+<img src="./Sponsor-Startseite_files/mobile-logo.png" id="ui_mobile_logo" class="cisco-ise cisco-ise-logo-image" alt="">
+<h3 id="ui_banner_label" class="cisco-ise cisco-ise-banner-label">WLAN für Gäste</h3>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#cisco-mobile-menu-createImportAccountsSummary" data-role="button" data-icon="bars" data-iconpos="notext" class="cisco-mobile-menu-button ui-btn-right">Menu</a>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#cisco-desktop-menu-createImportAccountsSummary" data-rel="popup" data-role="button" data-icon="arrow-d" data-iconpos="right" class="cisco-desktop-menu-button ui-btn-right">Willkommen&nbsp;<span class="sponsorName">DanielaScherf</span></a>
+        </div>
+
+        </div>
+    <div data-role="content" data-theme="a" class="ui-content ui-body-a">
+        <div class="cisco-ise-body">
+            <div class="cisco-ise cisco-ise-content cisco-ise-main-content ui-corner-all ui-body-a ui-shadow">
+    <noscript>
+        &lt;p&gt;Sie m&amp;uuml;ssen JavaScript aktivieren, um diese Website nutzen zu k&amp;ouml;nnen.&lt;/p&gt;
+    </noscript>
+    <div class="cisco-ise-scriptable">
+        <div class="cisco-navbar cisco-mobile-hidden" data-role="navbar">
+    <ul>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#page-create" class="ui_create_accounts_button">Konten erstellen</a>
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#manageAccountsList" class="ui_manage_accounts_button"><div class="count-contain"><span class="count-label">Konten verwalten</span><span class="count-panel">(<span class="manageCount">165</span>)</span></div></a>
+
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#approveAccountsList" class="ui_approve_accounts_button"><div class="count-contain"><span class="count-label">Ausstehende Konten</span><span class="count-panel">(<span class="pendingCount">0</span>)</span></div></a>
+
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#notices" class="ui_notices_button"><div class="count-contain"><span class="count-label">Mitteilungen</span><span class="count-panel">(<span class="jobCount">0</span>)</span></div></a>
+
+        </li>
+    </ul>
+</div>
+<div class="approve-accounts-content cisco-nav-content" selection-dependant="true">
+
+        <div data-role="navbar">
+            <ul>
+                <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#notices" class="ui_notices_home_button">Fertig</a></li>
+                <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" class="noticesToolbarDelete">Mitteilung löschen</a></li>
+                <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#notifyImportJob" id="ui_create_import_summary_notify_button">Benachrichtigen</a></li>
+            </ul>
+         </div>
+            <h3 id="ui_create_import_summary_content_header_message">Kontoinformationen</h3>
+            <h4 class="content text-left job-message single-success" id="ui_create_import_success_single_message" style="display: none;">Konto erfolgreich importiert.</h4>
+            <h4 class="content text-left job-message multi-success" id="ui_create_import_success_multi_message" style="display: none;">Konten erfolgreich importiert.</h4>
+            <h4 class="content text-left job-message partial-success" id="ui_create_import_partial_success_message" style="display: none;">Es sind einige Fehler aufgetreten. Anzahl der erfolgreich importierten Konten:<span></span></h4>
+            <h4 class="content text-left job-message failures-count" id="ui_create_import_partial_failure_message" style="display: none;">Anzahl der Fehler:<span></span></h4>
+            <h4 class="content text-left job-message total-failure" id="ui_create_import_total_failure_message" style="display: none;">Es können keine Konten importiert werden. Es ist ein Fehler aufgetreten in Zeile </h4>
+            <h4 class="content text-left job-message created-count" id="ui_notify_import_accounts_created_label" style="display: none;">Erstellte Konten: <span></span></h4>
+            <h4 class="content text-left job-message showing-count" id="ui_notify_import_accounts_showing_label" style="display: none;">Anzeige: <span></span></h4>
+            
+            <div class="content job-message dynamic-message" style="display: none;">
+                <h4 class="text-left error-message"></h4>
+                <ul class="error-details"></ul>
+            </div>
+            <span id="imported_guest_data_template_container" style="display:none">
+                <div id="imported_guest_data_template">
+                    Benutzername:<span class="imported_guest_data_username"></span>
+                    <br>
+                    Kennwort:<span class="imported_guest_data_password"></span>
+                    <br>
+                    <br>
+                    <span class="data"></span>
+                </div>
+            </span>
+            <div class="page_panel" style="text-align:left">
+
+
+
+
+
+
+            </div>
+            <br>
+        </div>
+<div class="cisco-div-extender"></div>
+    </div>
+</div>
+<div class="cisco-ise-footer">
+    <div class="cisco-ise-footer-container">
+    <div class="cisco-footer-link cisco-footer-link-right cisco-footer-link-center">
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/help/b_spons_SponsorPortalUserGuide_en_us.html" class="ui-link" target="_blank">Hilfe</a>
+    </div></div>
+</div></div>
+    </div>
+</div>
+<div data-role="page" data-theme="a" id="manageAccountsList" class="page-home" data-url="manageAccountsList">
+
+    <div id="cisco-mobile-menu-manageAccountsList" class="cisco-mobile-menu side_panel" data-role="panel" data-display="overlay" data-position="right" data-theme="a">
+    <div class="ui-panel-welcome-message">
+    	<p>Willkommen&nbsp;DanielaScherf</p>
+    </div>     
+    <ul data-role="listview" data-icon="false">
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#page-create" class="cisco-nav-button ui_create_accounts_button">Konten erstellen</a>
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#manageAccountsList" class="cisco-nav-button ui_manage_accounts_button ui-btn-active ui-state-persist">Konten verwalten<span class="manageCount ui-li-count ui-btn-up-b">165</span></a>
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#approveAccountsList" class="cisco-nav-button ui_approve_accounts_button">Ausstehende Konten<span class="pendingCount ui-li-count ui-btn-up-b">0</span></a>
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#notices" class="cisco-nav-button ui_notices_button">Mitteilungen<span class="jobCount ui-li-count ui-btn-up-b">0</span></a>
+        </li>
+        <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/help/b_spons_SponsorPortalUserGuide_en_us.html" target="_blank">Hilfe</a></li>
+        <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/Logout.action?portal=227a7cd0-d76c-11e4-9f05-6cae8b6601b8">Abmelden</a></li>
+    </ul>
+</div>
+<div data-role="popup" id="cisco-desktop-menu-manageAccountsList" class="cisco-desktop-menu">
+    <ul data-role="listview" data-inset="true" data-icon="false">
+        <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/help/b_spons_SponsorPortalUserGuide_en_us.html" target="_blank">Hilfe</a></li>
+        <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/Logout.action?portal=227a7cd0-d76c-11e4-9f05-6cae8b6601b8">Abmelden</a></li>
+    </ul>
+</div>
+<div data-role="header" data-theme="a" class="ui-header ui-bar-a">
+        <div class="cisco-ise-banner">
+            <img src="./Sponsor-Startseite_files/TEMP_2646c1cae0f34d5d9d6874c853ee3df3logo_db_arcsight.png" id="ui_desktop_logo" class="cisco-ise cisco-ise-logo-image" alt="">
+<img src="./Sponsor-Startseite_files/mobile-logo.png" id="ui_mobile_logo" class="cisco-ise cisco-ise-logo-image" alt="">
+<h3 id="ui_banner_label" class="cisco-ise cisco-ise-banner-label">WLAN für Gäste</h3>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#cisco-mobile-menu-manageAccountsList" data-role="button" data-icon="bars" data-iconpos="notext" class="cisco-mobile-menu-button ui-btn-right">Menu</a>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#cisco-desktop-menu-manageAccountsList" data-rel="popup" data-role="button" data-icon="arrow-d" data-iconpos="right" class="cisco-desktop-menu-button ui-btn-right">Willkommen&nbsp;<span class="sponsorName">DanielaScherf</span></a>
+        </div>
+
+        </div>
+    <div data-role="content" data-theme="a" class="ui-content ui-body-a">
+        <div class="cisco-ise-body">
+            <div class="cisco-ise cisco-ise-content cisco-ise-main-content ui-corner-all ui-body-a ui-shadow">
+    <noscript>
+        &lt;p&gt;Sie m&amp;uuml;ssen JavaScript aktivieren, um diese Website nutzen zu k&amp;ouml;nnen.&lt;/p&gt;
+    </noscript>
+    <div class="cisco-ise-scriptable">
+        <div class="cisco-navbar cisco-mobile-hidden" data-role="navbar">
+    <ul>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#page-create" class="ui_create_accounts_button">Konten erstellen</a>
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#manageAccountsList" class="ui_manage_accounts_button ui-btn-active ui-state-persist"><div class="count-contain"><span class="count-label">Konten verwalten</span><span class="count-panel">(<span class="manageCount">165</span>)</span></div></a>
+
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#approveAccountsList" class="ui_approve_accounts_button"><div class="count-contain"><span class="count-label">Ausstehende Konten</span><span class="count-panel">(<span class="pendingCount">0</span>)</span></div></a>
+
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#notices" class="ui_notices_button"><div class="count-contain"><span class="count-label">Mitteilungen</span><span class="count-panel">(<span class="jobCount">0</span>)</span></div></a>
+
+        </li>
+    </ul>
+</div>
+<div class="manage-accounts-content cisco-nav-content">
+        <div class="empty-content" style="display: none;">
+            <p>
+                Derzeit sind keine Gastkonten vorhanden.</p>
+            <div class="cisco-ise-form-buttons">
+                <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" data-role="button" data-inline="true" data-mini="true" class="manageGuestsToolbarRefresh">Aktualisieren</a>
+            </div>
+        </div>
+
+        <div class="non-empty-content" style="display: none;">
+            <table style="cisco-table-container" class="search-container">
+			  <tbody><tr>
+			   <td>
+                 <input type="search" name="search">
+			   </td>
+			   <td>
+                 <span class="search-result" style="display: none;">(
+				  <span class="ui-btn-up-a search-value" style="border: none;"></span>
+				  <span style="border: none;" class="ui-btn-up-a">gefundene Konten</span>
+                 )</span>
+			   </td>
+			  </tr>
+			 </tbody></table>
+            <div data-role="controlgroup" data-type="horizontal" data-mini="true" class="manageAccountsToolbar">
+                        <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" data-role="button" class="ui_account_action_edit_button single-select-only ui-disabled">Bearbeiten</a>
+                        <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#resend" data-role="button" class="ui_account_action_resend_button ui-disabled">Erneut senden</a>
+                        <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#delete" data-role="button" class="ui_account_action_delete_button ui-disabled">Löschen</a>
+                        <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#resetPassword" data-role="button" class="ui_account_action_reset_password_button ui-disabled">Kennwort zurücksetzen</a>
+                        <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" data-role="button" class="manageGuestsToolbarRefresh ignore-select">Aktualisieren</a>
+                    </div>
+                    <div class="cisco-table-container">
+                        <table class="manage-accounts-table" data-role="ciscotable" toolbar=".manageAccountsToolbar" pagination=".manageAccountsPagination">
+                        </table>
+                    </div>
+                <div data-role="pagination" id="" class="paginationControls manageAccountsPagination">
+    <div data-role="controlgroup" data-type="horizontal" data-mini="true">
+        <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" data-role="button" class="pagination-first-button">|&lt;</a>
+        <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" data-role="button" class="pagination-prev-button">&lt;</a>
+        <select></select>
+        <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" data-role="button" class="pagination-next-button">&gt;</a>
+        <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" data-role="button" class="pagination-last-button">&gt;|</a>
+    </div>
+</div>
+</div>
+    </div>
+<div class="cisco-div-extender"></div>
+    </div>
+</div>
+<div class="cisco-ise-footer">
+    <div class="cisco-ise-footer-container">
+    <div class="cisco-footer-link cisco-footer-link-right cisco-footer-link-center">
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/help/b_spons_SponsorPortalUserGuide_en_us.html" class="ui-link" target="_blank">Hilfe</a>
+    </div></div>
+</div></div>
+    </div>
+</div>
+<div data-role="page" data-theme="a" id="createAccountsEdit" class="page-home" data-url="createAccountsEdit">
+
+    <div id="cisco-mobile-menu-createAccountsEdit" class="cisco-mobile-menu side_panel" data-role="panel" data-display="overlay" data-position="right" data-theme="a">
+    <div class="ui-panel-welcome-message">
+    	<p>Willkommen&nbsp;DanielaScherf</p>
+    </div>     
+    <ul data-role="listview" data-icon="false">
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#page-create" class="cisco-nav-button ui_create_accounts_button">Konten erstellen</a>
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#manageAccountsList" class="cisco-nav-button ui_manage_accounts_button">Konten verwalten<span class="manageCount ui-li-count ui-btn-up-b">165</span></a>
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#approveAccountsList" class="cisco-nav-button ui_approve_accounts_button">Ausstehende Konten<span class="pendingCount ui-li-count ui-btn-up-b">0</span></a>
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#notices" class="cisco-nav-button ui_notices_button">Mitteilungen<span class="jobCount ui-li-count ui-btn-up-b">0</span></a>
+        </li>
+        <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/help/b_spons_SponsorPortalUserGuide_en_us.html" target="_blank">Hilfe</a></li>
+        <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/Logout.action?portal=227a7cd0-d76c-11e4-9f05-6cae8b6601b8">Abmelden</a></li>
+    </ul>
+</div>
+<div data-role="popup" id="cisco-desktop-menu-createAccountsEdit" class="cisco-desktop-menu">
+    <ul data-role="listview" data-inset="true" data-icon="false">
+        <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/help/b_spons_SponsorPortalUserGuide_en_us.html" target="_blank">Hilfe</a></li>
+        <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/Logout.action?portal=227a7cd0-d76c-11e4-9f05-6cae8b6601b8">Abmelden</a></li>
+    </ul>
+</div>
+<div data-role="header" data-theme="a" class="ui-header ui-bar-a">
+        <div class="cisco-ise-banner">
+            <img src="./Sponsor-Startseite_files/TEMP_2646c1cae0f34d5d9d6874c853ee3df3logo_db_arcsight.png" id="ui_desktop_logo" class="cisco-ise cisco-ise-logo-image" alt="">
+<img src="./Sponsor-Startseite_files/mobile-logo.png" id="ui_mobile_logo" class="cisco-ise cisco-ise-logo-image" alt="">
+<h3 id="ui_banner_label" class="cisco-ise cisco-ise-banner-label">WLAN für Gäste</h3>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#cisco-mobile-menu-createAccountsEdit" data-role="button" data-icon="bars" data-iconpos="notext" class="cisco-mobile-menu-button ui-btn-right">Menu</a>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#cisco-desktop-menu-createAccountsEdit" data-rel="popup" data-role="button" data-icon="arrow-d" data-iconpos="right" class="cisco-desktop-menu-button ui-btn-right">Willkommen&nbsp;<span class="sponsorName">DanielaScherf</span></a>
+        </div>
+
+        </div>
+    <div data-role="content" data-theme="a" class="ui-content ui-body-a">
+        <div class="cisco-ise-body">
+            <div class="cisco-ise cisco-ise-content cisco-ise-main-content ui-corner-all ui-body-a ui-shadow">
+    <noscript>
+        &lt;p&gt;Sie m&amp;uuml;ssen JavaScript aktivieren, um diese Website nutzen zu k&amp;ouml;nnen.&lt;/p&gt;
+    </noscript>
+    <div class="cisco-ise-scriptable">
+        <div class="cisco-navbar cisco-mobile-hidden" data-role="navbar">
+    <ul>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#page-create" class="ui_create_accounts_button">Konten erstellen</a>
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#manageAccountsList" class="ui_manage_accounts_button"><div class="count-contain"><span class="count-label">Konten verwalten</span><span class="count-panel">(<span class="manageCount">165</span>)</span></div></a>
+
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#approveAccountsList" class="ui_approve_accounts_button"><div class="count-contain"><span class="count-label">Ausstehende Konten</span><span class="count-panel">(<span class="pendingCount">0</span>)</span></div></a>
+
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#notices" class="ui_notices_button"><div class="count-contain"><span class="count-label">Mitteilungen</span><span class="count-panel">(<span class="jobCount">0</span>)</span></div></a>
+
+        </li>
+    </ul>
+</div>
+<div class="approve-accounts-content cisco-nav-content" selection-dependant="true">
+
+
+        <h1 class="cisco-ise cisco-ise-content-header" id="ui_edit_accounts_content_label">Konto bearbeiten</h1>
+<div class="cisco-account-edit ui-panel-left">
+             <h2>Gastinformationen</h2>
+            <div id="editGuestPanelContent"></div>
+         </div>
+         <div class="cisco-account-edit ui-panel-right">
+            <h2 id="ui_create_access_valid_instruction_message">Zugriffsinformationen</h2>
+            <div id="accessTimeGuestPanelContent"></div>
+            <div class="cisco-ise-form-buttons two-button-layout">
+               <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#landing" data-role="button" id="ui_manage_accounts_edit_label_cancel_button" data-rel="back" data-mini="true">Abbrechen</a>
+               <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" data-role="button" server-operation="editGuest" server-success="{&#39;handler&#39;:&#39;cisco.ise.sponsor.pages.home.handleManageListOperation&#39;}" validate="fields_editGuestForm|access_editGuestForm" form-to-submit="fields_editGuestForm|access_editGuestForm" id="ui_manage_accounts_edit_label_save_button" pre-submit="cisco.ise.sponsor.pages.home.prepareCreateFields" class="ui-btn-active" data-mini="true">
+                               Speichern</a>
+           </div>
+        </div>
+    </div>
+<div class="cisco-div-extender"></div>
+    </div>
+</div>
+<div class="cisco-ise-footer">
+    <div class="cisco-ise-footer-container">
+    <div class="cisco-footer-link cisco-footer-link-right cisco-footer-link-center">
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/help/b_spons_SponsorPortalUserGuide_en_us.html" class="ui-link" target="_blank">Hilfe</a>
+    </div></div>
+</div></div>
+    </div>
+</div>
+<div data-role="page" data-theme="a" id="approveAccountsList" class="page-home" data-url="approveAccountsList">
+
+    <div id="cisco-mobile-menu-approveAccountsList" class="cisco-mobile-menu side_panel" data-role="panel" data-display="overlay" data-position="right" data-theme="a">
+    <div class="ui-panel-welcome-message">
+    	<p>Willkommen&nbsp;DanielaScherf</p>
+    </div>     
+    <ul data-role="listview" data-icon="false">
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#page-create" class="cisco-nav-button ui_create_accounts_button">Konten erstellen</a>
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#manageAccountsList" class="cisco-nav-button ui_manage_accounts_button">Konten verwalten<span class="manageCount ui-li-count ui-btn-up-b">165</span></a>
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#approveAccountsList" class="cisco-nav-button ui_approve_accounts_button ui-btn-active ui-state-persist">Ausstehende Konten<span class="pendingCount ui-li-count ui-btn-up-b">0</span></a>
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#notices" class="cisco-nav-button ui_notices_button">Mitteilungen<span class="jobCount ui-li-count ui-btn-up-b">0</span></a>
+        </li>
+        <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/help/b_spons_SponsorPortalUserGuide_en_us.html" target="_blank">Hilfe</a></li>
+        <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/Logout.action?portal=227a7cd0-d76c-11e4-9f05-6cae8b6601b8">Abmelden</a></li>
+    </ul>
+</div>
+<div data-role="popup" id="cisco-desktop-menu-approveAccountsList" class="cisco-desktop-menu">
+    <ul data-role="listview" data-inset="true" data-icon="false">
+        <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/help/b_spons_SponsorPortalUserGuide_en_us.html" target="_blank">Hilfe</a></li>
+        <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/Logout.action?portal=227a7cd0-d76c-11e4-9f05-6cae8b6601b8">Abmelden</a></li>
+    </ul>
+</div>
+<div data-role="header" data-theme="a" class="ui-header ui-bar-a">
+        <div class="cisco-ise-banner">
+            <img src="./Sponsor-Startseite_files/TEMP_2646c1cae0f34d5d9d6874c853ee3df3logo_db_arcsight.png" id="ui_desktop_logo" class="cisco-ise cisco-ise-logo-image" alt="">
+<img src="./Sponsor-Startseite_files/mobile-logo.png" id="ui_mobile_logo" class="cisco-ise cisco-ise-logo-image" alt="">
+<h3 id="ui_banner_label" class="cisco-ise cisco-ise-banner-label">WLAN für Gäste</h3>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#cisco-mobile-menu-approveAccountsList" data-role="button" data-icon="bars" data-iconpos="notext" class="cisco-mobile-menu-button ui-btn-right">Menu</a>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#cisco-desktop-menu-approveAccountsList" data-rel="popup" data-role="button" data-icon="arrow-d" data-iconpos="right" class="cisco-desktop-menu-button ui-btn-right">Willkommen&nbsp;<span class="sponsorName">DanielaScherf</span></a>
+        </div>
+
+        </div>
+    <div data-role="content" data-theme="a" class="ui-content ui-body-a">
+        <div class="cisco-ise-body">
+            <div class="cisco-ise cisco-ise-content cisco-ise-main-content ui-corner-all ui-body-a ui-shadow">
+    <noscript>
+        &lt;p&gt;Sie m&amp;uuml;ssen JavaScript aktivieren, um diese Website nutzen zu k&amp;ouml;nnen.&lt;/p&gt;
+    </noscript>
+    <div class="cisco-ise-scriptable">
+        <div class="cisco-navbar cisco-mobile-hidden" data-role="navbar">
+    <ul>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#page-create" class="ui_create_accounts_button">Konten erstellen</a>
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#manageAccountsList" class="ui_manage_accounts_button"><div class="count-contain"><span class="count-label">Konten verwalten</span><span class="count-panel">(<span class="manageCount">165</span>)</span></div></a>
+
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#approveAccountsList" class="ui_approve_accounts_button ui-btn-active ui-state-persist"><div class="count-contain"><span class="count-label">Ausstehende Konten</span><span class="count-panel">(<span class="pendingCount">0</span>)</span></div></a>
+
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#notices" class="ui_notices_button"><div class="count-contain"><span class="count-label">Mitteilungen</span><span class="count-panel">(<span class="jobCount">0</span>)</span></div></a>
+
+        </li>
+    </ul>
+</div>
+<div class="approve-accounts-content cisco-nav-content">
+        <div class="empty-content" style="display: none;">
+            <p>
+                Es sind derzeit keine ausstehenden Gastkonten vorhanden.</p>
+            <div class="cisco-ise-form-buttons">
+                <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" data-role="button" data-inline="true" data-mini="true" class="approveAccountsToolbarRefresh">Aktualisieren</a>
+            </div>
+        </div>
+
+        <div class="non-empty-content" style="display: none;">
+           <table style="cisco-table-container" class="search-container">
+			  <tbody><tr>
+			   <td>
+                 <input type="search" name="search">
+			   </td>
+			   <td>
+			     <span class="search-result" style="display: none;">(
+                  <span class="ui-btn-up-a search-value" style="border: none;"></span>
+                  <span style="border: none;" class="ui-btn-up-a">Gefundene ausstehende Konten</span>
+                 )</span>
+			   </td>
+			  </tr>
+			</tbody></table>
+            <div data-role="controlgroup" data-type="horizontal" data-mini="true" class="approveAccountsToolbar">
+                        <a class="ui_account_action_delete_button ui-disabled" href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#delete" data-role="button">Löschen</a>
+			            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" data-role="button" class="ui_list_refresh_button ignore-select approveAccountsToolbarRefresh">Aktualisieren</a>
+                    </div>
+                    <div class="cisco-table-container">
+                        <table class="approve-accounts-table" data-role="ciscotable" toolbar=".approveAccountsToolbar" pagination=".approveAccountsPagination">
+                        </table>
+                    </div>
+                <div data-role="pagination" id="" class="paginationControls approveAccountsPagination">
+    <div data-role="controlgroup" data-type="horizontal" data-mini="true">
+        <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" data-role="button" class="pagination-first-button">|&lt;</a>
+        <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" data-role="button" class="pagination-prev-button">&lt;</a>
+        <select></select>
+        <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" data-role="button" class="pagination-next-button">&gt;</a>
+        <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" data-role="button" class="pagination-last-button">&gt;|</a>
+    </div>
+</div>
+</div>
+    </div>
+<div class="cisco-div-extender"></div>
+    </div>
+</div>
+<div class="cisco-ise-footer">
+    <div class="cisco-ise-footer-container">
+    <div class="cisco-footer-link cisco-footer-link-right cisco-footer-link-center">
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/help/b_spons_SponsorPortalUserGuide_en_us.html" class="ui-link" target="_blank">Hilfe</a>
+    </div></div>
+</div></div>
+    </div>
+</div>
+<div data-role="page" data-theme="a" id="notices" class="page-home" data-url="notices">
+
+    <div id="cisco-mobile-menu-notices" class="cisco-mobile-menu side_panel" data-role="panel" data-display="overlay" data-position="right" data-theme="a">
+    <div class="ui-panel-welcome-message">
+    	<p>Willkommen&nbsp;DanielaScherf</p>
+    </div>     
+    <ul data-role="listview" data-icon="false">
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#page-create" class="cisco-nav-button ui_create_accounts_button">Konten erstellen</a>
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#manageAccountsList" class="cisco-nav-button ui_manage_accounts_button">Konten verwalten<span class="manageCount ui-li-count ui-btn-up-b">165</span></a>
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#approveAccountsList" class="cisco-nav-button ui_approve_accounts_button">Ausstehende Konten<span class="pendingCount ui-li-count ui-btn-up-b">0</span></a>
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#notices" class="cisco-nav-button ui_notices_button ui-btn-active ui-state-persist">Mitteilungen<span class="jobCount ui-li-count ui-btn-up-b">0</span></a>
+        </li>
+        <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/help/b_spons_SponsorPortalUserGuide_en_us.html" target="_blank">Hilfe</a></li>
+        <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/Logout.action?portal=227a7cd0-d76c-11e4-9f05-6cae8b6601b8">Abmelden</a></li>
+    </ul>
+</div>
+<div data-role="popup" id="cisco-desktop-menu-notices" class="cisco-desktop-menu">
+    <ul data-role="listview" data-inset="true" data-icon="false">
+        <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/help/b_spons_SponsorPortalUserGuide_en_us.html" target="_blank">Hilfe</a></li>
+        <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/Logout.action?portal=227a7cd0-d76c-11e4-9f05-6cae8b6601b8">Abmelden</a></li>
+    </ul>
+</div>
+<div data-role="header" data-theme="a" class="ui-header ui-bar-a">
+        <div class="cisco-ise-banner">
+            <img src="./Sponsor-Startseite_files/TEMP_2646c1cae0f34d5d9d6874c853ee3df3logo_db_arcsight.png" id="ui_desktop_logo" class="cisco-ise cisco-ise-logo-image" alt="">
+<img src="./Sponsor-Startseite_files/mobile-logo.png" id="ui_mobile_logo" class="cisco-ise cisco-ise-logo-image" alt="">
+<h3 id="ui_banner_label" class="cisco-ise cisco-ise-banner-label">WLAN für Gäste</h3>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#cisco-mobile-menu-notices" data-role="button" data-icon="bars" data-iconpos="notext" class="cisco-mobile-menu-button ui-btn-right">Menu</a>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#cisco-desktop-menu-notices" data-rel="popup" data-role="button" data-icon="arrow-d" data-iconpos="right" class="cisco-desktop-menu-button ui-btn-right">Willkommen&nbsp;<span class="sponsorName">DanielaScherf</span></a>
+        </div>
+
+        </div>
+    <div data-role="content" data-theme="a" class="ui-content ui-body-a">
+        <div class="cisco-ise-body">
+            <div class="cisco-ise cisco-ise-content cisco-ise-main-content ui-corner-all ui-body-a ui-shadow">
+    <noscript>
+        &lt;p&gt;Sie m&amp;uuml;ssen JavaScript aktivieren, um diese Website nutzen zu k&amp;ouml;nnen.&lt;/p&gt;
+    </noscript>
+    <div class="cisco-ise-scriptable">
+        <div class="cisco-navbar cisco-mobile-hidden" data-role="navbar">
+    <ul>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#page-create" class="ui_create_accounts_button">Konten erstellen</a>
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#manageAccountsList" class="ui_manage_accounts_button"><div class="count-contain"><span class="count-label">Konten verwalten</span><span class="count-panel">(<span class="manageCount">165</span>)</span></div></a>
+
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#approveAccountsList" class="ui_approve_accounts_button"><div class="count-contain"><span class="count-label">Ausstehende Konten</span><span class="count-panel">(<span class="pendingCount">0</span>)</span></div></a>
+
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#notices" class="ui_notices_button ui-btn-active ui-state-persist"><div class="count-contain"><span class="count-label">Mitteilungen</span><span class="count-panel">(<span class="jobCount">0</span>)</span></div></a>
+
+        </li>
+    </ul>
+</div>
+<div class="notices-content cisco-nav-content">
+        <div class="empty-content" style="display: none;">
+            <p>
+                Es liegen derzeit keine Mitteilungen vor.</p>
+            <div class="cisco-ise-form-buttons">
+                <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" data-role="button" data-inline="true" data-mini="true" class="noticesToolbarRefresh">Aktualisieren</a>
+            </div>
+        </div>
+        <div class="non-empty-content" style="display: none;">
+	          <table style="cisco-table-container" class="search-container">
+				 <tbody><tr>
+				    <td>
+	                  <input type="search" name="search">
+				    </td>
+				    <td>
+				     <span class="search-result" style="display: none;">(
+	                    <span class="ui-btn-up-a search-value" style="border: none;"></span>
+	                    <span style="border: none;" class="ui-btn-up-a">gefundene Benachrichtigungen</span>
+	                 )</span>
+				  </td>
+				 </tr>
+		     </tbody></table>
+            <div data-role="controlgroup" data-type="horizontal" data-mini="true" class="noticesToolbar">
+                        <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" data-role="button" class="noticesToolbarDelete ui-disabled">Mitteilung löschen</a>
+                        <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" data-role="button" class="noticesToolbarRefresh ignore-select">Aktualisieren</a>
+                    </div>
+                    <div class="cisco-table-container">
+                        <table class="notices-table" data-role="ciscotable" toolbar=".noticesToolbar" pagination=".noticesPagination">
+                        </table>
+                    </div>
+                <div data-role="pagination" id="" class="paginationControls noticesPagination">
+    <div data-role="controlgroup" data-type="horizontal" data-mini="true">
+        <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" data-role="button" class="pagination-first-button">|&lt;</a>
+        <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" data-role="button" class="pagination-prev-button">&lt;</a>
+        <select></select>
+        <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" data-role="button" class="pagination-next-button">&gt;</a>
+        <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" data-role="button" class="pagination-last-button">&gt;|</a>
+    </div>
+</div>
+</div>
+    </div>
+<div class="cisco-div-extender"></div>
+    </div>
+</div>
+<div class="cisco-ise-footer">
+    <div class="cisco-ise-footer-container">
+    <div class="cisco-footer-link cisco-footer-link-right cisco-footer-link-center">
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/help/b_spons_SponsorPortalUserGuide_en_us.html" class="ui-link" target="_blank">Hilfe</a>
+    </div></div>
+</div></div>
+    </div>
+</div>
+<div data-role="page" data-theme="a" id="approveAccountSummary" class="page-home" data-url="approveAccountSummary">
+
+    <div id="cisco-mobile-menu-approveAccountSummary" class="cisco-mobile-menu side_panel" data-role="panel" data-display="overlay" data-position="right" data-theme="a">
+    <div class="ui-panel-welcome-message">
+    	<p>Willkommen&nbsp;DanielaScherf</p>
+    </div>     
+    <ul data-role="listview" data-icon="false">
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#page-create" class="cisco-nav-button ui_create_accounts_button">Konten erstellen</a>
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#manageAccountsList" class="cisco-nav-button ui_manage_accounts_button">Konten verwalten<span class="manageCount ui-li-count ui-btn-up-b">165</span></a>
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#approveAccountsList" class="cisco-nav-button ui_approve_accounts_button">Ausstehende Konten<span class="pendingCount ui-li-count ui-btn-up-b">0</span></a>
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#notices" class="cisco-nav-button ui_notices_button">Mitteilungen<span class="jobCount ui-li-count ui-btn-up-b">0</span></a>
+        </li>
+        <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/help/b_spons_SponsorPortalUserGuide_en_us.html" target="_blank">Hilfe</a></li>
+        <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/Logout.action?portal=227a7cd0-d76c-11e4-9f05-6cae8b6601b8">Abmelden</a></li>
+    </ul>
+</div>
+<div data-role="popup" id="cisco-desktop-menu-approveAccountSummary" class="cisco-desktop-menu">
+    <ul data-role="listview" data-inset="true" data-icon="false">
+        <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/help/b_spons_SponsorPortalUserGuide_en_us.html" target="_blank">Hilfe</a></li>
+        <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/Logout.action?portal=227a7cd0-d76c-11e4-9f05-6cae8b6601b8">Abmelden</a></li>
+    </ul>
+</div>
+<div data-role="header" data-theme="a" class="ui-header ui-bar-a">
+        <div class="cisco-ise-banner">
+            <img src="./Sponsor-Startseite_files/TEMP_2646c1cae0f34d5d9d6874c853ee3df3logo_db_arcsight.png" id="ui_desktop_logo" class="cisco-ise cisco-ise-logo-image" alt="">
+<img src="./Sponsor-Startseite_files/mobile-logo.png" id="ui_mobile_logo" class="cisco-ise cisco-ise-logo-image" alt="">
+<h3 id="ui_banner_label" class="cisco-ise cisco-ise-banner-label">WLAN für Gäste</h3>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#cisco-mobile-menu-approveAccountSummary" data-role="button" data-icon="bars" data-iconpos="notext" class="cisco-mobile-menu-button ui-btn-right">Menu</a>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#cisco-desktop-menu-approveAccountSummary" data-rel="popup" data-role="button" data-icon="arrow-d" data-iconpos="right" class="cisco-desktop-menu-button ui-btn-right">Willkommen&nbsp;<span class="sponsorName">DanielaScherf</span></a>
+        </div>
+
+        </div>
+    <div data-role="content" data-theme="a" class="ui-content ui-body-a">
+        <div class="cisco-ise-body">
+            <div class="cisco-ise cisco-ise-content cisco-ise-main-content ui-corner-all ui-body-a ui-shadow">
+    <noscript>
+        &lt;p&gt;Sie m&amp;uuml;ssen JavaScript aktivieren, um diese Website nutzen zu k&amp;ouml;nnen.&lt;/p&gt;
+    </noscript>
+    <div class="cisco-ise-scriptable">
+        <div class="cisco-navbar cisco-mobile-hidden" data-role="navbar">
+    <ul>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#page-create" class="ui_create_accounts_button">Konten erstellen</a>
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#manageAccountsList" class="ui_manage_accounts_button"><div class="count-contain"><span class="count-label">Konten verwalten</span><span class="count-panel">(<span class="manageCount">165</span>)</span></div></a>
+
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#approveAccountsList" class="ui_approve_accounts_button"><div class="count-contain"><span class="count-label">Ausstehende Konten</span><span class="count-panel">(<span class="pendingCount">0</span>)</span></div></a>
+
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#notices" class="ui_notices_button"><div class="count-contain"><span class="count-label">Mitteilungen</span><span class="count-panel">(<span class="jobCount">0</span>)</span></div></a>
+
+        </li>
+    </ul>
+</div>
+<div class="approve-accounts-content cisco-nav-content" selection-dependant="true">
+        <h3 id="ui_approve_accounts_summary_heading_label"></h3>
+        <div class="text-left ui-body-b page_panel"></div>
+
+        <div id="ui_account_approve_nav" class="cisco-ise-form-buttons
+        
+        ">
+           	<a id="ui_account_action_delete_button" href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#delete" data-role="button" data-mini="true">Löschen</a>
+         </div>
+
+        <div id="ui_account_done_nav" class="cisco-ise-form-buttons">
+            <a id="ui_approve_accounts_details_view_back_button" href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#approveAccountsList" data-role="button" data-mini="true">Fertig</a>
+        </div>
+    </div>
+<div class="cisco-div-extender"></div>
+    </div>
+</div>
+<div class="cisco-ise-footer">
+    <div class="cisco-ise-footer-container">
+    <div class="cisco-footer-link cisco-footer-link-right cisco-footer-link-center">
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/help/b_spons_SponsorPortalUserGuide_en_us.html" class="ui-link" target="_blank">Hilfe</a>
+    </div></div>
+</div></div>
+    </div>
+</div>
+<div data-role="page" data-theme="a" id="manageAccountSummary" class="page-home" data-url="manageAccountSummary">
+
+    <div id="cisco-mobile-menu-manageAccountSummary" class="cisco-mobile-menu side_panel" data-role="panel" data-display="overlay" data-position="right" data-theme="a">
+    <div class="ui-panel-welcome-message">
+    	<p>Willkommen&nbsp;DanielaScherf</p>
+    </div>     
+    <ul data-role="listview" data-icon="false">
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#page-create" class="cisco-nav-button ui_create_accounts_button">Konten erstellen</a>
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#manageAccountsList" class="cisco-nav-button ui_manage_accounts_button">Konten verwalten<span class="manageCount ui-li-count ui-btn-up-b">165</span></a>
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#approveAccountsList" class="cisco-nav-button ui_approve_accounts_button">Ausstehende Konten<span class="pendingCount ui-li-count ui-btn-up-b">0</span></a>
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#notices" class="cisco-nav-button ui_notices_button">Mitteilungen<span class="jobCount ui-li-count ui-btn-up-b">0</span></a>
+        </li>
+        <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/help/b_spons_SponsorPortalUserGuide_en_us.html" target="_blank">Hilfe</a></li>
+        <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/Logout.action?portal=227a7cd0-d76c-11e4-9f05-6cae8b6601b8">Abmelden</a></li>
+    </ul>
+</div>
+<div data-role="popup" id="cisco-desktop-menu-manageAccountSummary" class="cisco-desktop-menu">
+    <ul data-role="listview" data-inset="true" data-icon="false">
+        <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/help/b_spons_SponsorPortalUserGuide_en_us.html" target="_blank">Hilfe</a></li>
+        <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/Logout.action?portal=227a7cd0-d76c-11e4-9f05-6cae8b6601b8">Abmelden</a></li>
+    </ul>
+</div>
+<div data-role="header" data-theme="a" class="ui-header ui-bar-a">
+        <div class="cisco-ise-banner">
+            <img src="./Sponsor-Startseite_files/TEMP_2646c1cae0f34d5d9d6874c853ee3df3logo_db_arcsight.png" id="ui_desktop_logo" class="cisco-ise cisco-ise-logo-image" alt="">
+<img src="./Sponsor-Startseite_files/mobile-logo.png" id="ui_mobile_logo" class="cisco-ise cisco-ise-logo-image" alt="">
+<h3 id="ui_banner_label" class="cisco-ise cisco-ise-banner-label">WLAN für Gäste</h3>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#cisco-mobile-menu-manageAccountSummary" data-role="button" data-icon="bars" data-iconpos="notext" class="cisco-mobile-menu-button ui-btn-right">Menu</a>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#cisco-desktop-menu-manageAccountSummary" data-rel="popup" data-role="button" data-icon="arrow-d" data-iconpos="right" class="cisco-desktop-menu-button ui-btn-right">Willkommen&nbsp;<span class="sponsorName">DanielaScherf</span></a>
+        </div>
+
+        </div>
+    <div data-role="content" data-theme="a" class="ui-content ui-body-a">
+        <div class="cisco-ise-body">
+            <div class="cisco-ise cisco-ise-content cisco-ise-main-content ui-corner-all ui-body-a ui-shadow">
+    <noscript>
+        &lt;p&gt;Sie m&amp;uuml;ssen JavaScript aktivieren, um diese Website nutzen zu k&amp;ouml;nnen.&lt;/p&gt;
+    </noscript>
+    <div class="cisco-ise-scriptable">
+        <div class="cisco-navbar cisco-mobile-hidden" data-role="navbar">
+    <ul>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#page-create" class="ui_create_accounts_button">Konten erstellen</a>
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#manageAccountsList" class="ui_manage_accounts_button"><div class="count-contain"><span class="count-label">Konten verwalten</span><span class="count-panel">(<span class="manageCount">165</span>)</span></div></a>
+
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#approveAccountsList" class="ui_approve_accounts_button"><div class="count-contain"><span class="count-label">Ausstehende Konten</span><span class="count-panel">(<span class="pendingCount">0</span>)</span></div></a>
+
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#notices" class="ui_notices_button"><div class="count-contain"><span class="count-label">Mitteilungen</span><span class="count-panel">(<span class="jobCount">0</span>)</span></div></a>
+
+        </li>
+    </ul>
+</div>
+<div class="approve-accounts-content cisco-nav-content" selection-dependant="true">
+
+        <div data-role="controlgroup" data-mini="true" data-type="horizontal" class="nowrap accountSummaryControls">
+            <a class="ui_account_action_resend_button" href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#resend" data-role="button">Erneut senden</a>
+            <a class="ui_account_action_edit_button" href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#createAccountsEdit" data-role="button">Bearbeiten</a>
+            <a class="ui_account_action_delete_button" href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#delete" data-role="button">Löschen</a>
+            <a class="ui_account_action_reset_password_button" href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#resetPassword" data-role="button">Kennwort zurücksetzen</a>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" id="printAccount" class="ui-second-col" data-role="button">Drucken</a>
+            </div>
+
+        <h3 id="ui_manage_accounts_summary_heading_label"></h3>
+        <div class="ui-body-b page_panel"></div>
+        <div class="cisco-ise-form-buttons">
+            <a data-role="button" href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#manageAccountsList" data-inline="true" id="ui_manage_accounts_summary_done">Fertig</a>
+        </div>
+    </div>
+<div class="cisco-div-extender"></div>
+    </div>
+</div>
+<div class="cisco-ise-footer">
+    <div class="cisco-ise-footer-container">
+    <div class="cisco-footer-link cisco-footer-link-right cisco-footer-link-center">
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/help/b_spons_SponsorPortalUserGuide_en_us.html" class="ui-link" target="_blank">Hilfe</a>
+    </div></div>
+</div></div>
+    </div>
+</div>
+<div data-role="dialog" selection-dependant="true" id="approve" data-url="approve">
+
+        <div data-role="header" data-position="fixed" data-theme="a">
+            <h1>Genehmigen</h1>
+        </div><!-- /header -->
+
+        <div data-role="content" data-theme="a">
+            <form class="validateable" id="approveForm" novalidate="novalidate">
+	            <p>Möchten Sie die ausgewählten Konten wirklich genehmigen?</p>
+	            <div data-role="fieldcontain">
+		        		<label for="fromEmail">E-Mail-Adresse des Sponsors *</label>
+		            	<input data-mini="true" type="text" name="copyEmail" class="email" required="" value="" id="fromEmail">
+		        	</div>
+	        	<div class="dialog-action-buttons">
+	                <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" data-inline="true" data-role="button" data-rel="back">Abbrechen</a>
+	                <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" data-inline="true" data-role="button" data-theme="b" server-success="{&#39;handler&#39;:&#39;cisco.ise.sponsor.pages.home.handleApproveListOperation&#39;}" server-operation="approve" form-to-submit="approveForm" validate="approveForm">OK</a>
+
+	            </div>
+            </form>
+        </div><!-- /content -->
+
+    </div><!-- /page --><div data-role="dialog" selection-dependant="true" id="deny" data-url="deny">
+
+        <div data-role="header" data-position="fixed" data-theme="a">
+            <h1>Ablehnen</h1>
+        </div><!-- /header -->
+
+        <div data-role="content" data-theme="a">
+            <p>Möchten Sie den Zugriff für die ausgewählten Konten wirklich ablehnen?</p>
+            <div class="dialog-action-buttons">
+                <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" data-inline="true" data-role="button" data-rel="back">Abbrechen</a>
+                <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" data-inline="true" data-role="button" data-theme="b" show-on-success="approveAccountsList" server-success="{&#39;handler&#39;:&#39;cisco.ise.sponsor.pages.home.handleApproveListOperation&#39;}" server-operation="deny">OK</a>
+            </div>
+        </div><!-- /content -->
+    </div><!-- /page --><div data-role="dialog" selection-dependant="true" id="resend" data-url="resend">
+
+        <div data-role="header" data-position="fixed" data-theme="a">
+            <h1>Erneut senden</h1>
+        </div><!-- /header -->
+
+        <div data-role="content" data-theme="a">
+
+    			<p>Benachrichtigungen zustellen über:</p>	 
+<form class="validateable" notify-form="true" id="resendForm" novalidate="novalidate">
+	<input data-mini="true" type="checkbox" value="true" name="print" class="custom" id="resendFormPrint">
+	<label for="resendFormPrint">Drucken</label>
+	<input data-mini="true" type="checkbox" name="email" class="custom" value="true" id="resendFormEmail">
+	<label for="resendFormEmail">E-Mail</label>
+
+	<blockquote> 
+	
+		<input data-mini="true" type="checkbox" name="summary" class="custom" value="true" id="resendFormSummary" checkbox-dependant="resendFormEmail" disabled="">
+		<label for="resendFormSummary">Zusammenfassung an mich senden</label>
+		<input data-mini="true" type="checkbox" name="copyMe" class="custom" value="true" id="resendFormCopyMe" checkbox-dependant="resendFormEmail" disabled="">
+		<label for="resendFormCopyMe">Mich als zusätzlichen Empfänger hinzufügen</label>
+		<div data-role="fieldcontain">
+	        	<label for="resendFormCopyEmail">E-Mail-Adresse des Sponsors*</label>
+	            <input data-mini="true" type="text" name="copyEmail" class="email" required="" value="" id="resendFormCopyEmail" checkbox-dependant="resendFormEmail" disabled="">
+	        </div>
+		</blockquote>
+</form>
+
+<div class="dialog-action-buttons">
+                <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" data-role="button" data-inline="true" data-rel="back">Abbrechen</a>
+                <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" data-role="button" data-inline="true" data-theme="b" close-on-success="true" validate="resendForm" server-operation="resend" form-to-submit="resendForm">OK</a>
+            </div>
+    	</div>
+    </div><!-- /page --><div data-role="dialog" selection-dependant="true" id="extend" data-url="extend">
+
+    <div data-role="header" data-position="fixed" data-theme="a">
+        <h1>Verlängern</h1>
+    </div><!-- /header -->
+
+	<div data-role="content" data-theme="a">
+		<form class="validateable" id="extendForm" novalidate="novalidate">
+			<div data-role="fieldcontain">
+				<label for="extenderamount">Verlängern um</label>
+				<div class="ui-grid-a" style="display:block-inline;">			
+					<div class="ui-block-a">
+						<input type="text" data-mini="true" name="amount" id="extenderamount" class="required digits" data-msg-required="Dieses Feld ist ein Pflichtfeld." data-msg-digits="Geben Sie eine gültige Zahl ein."> 
+					</div>
+					<div class="ui-block-b">
+						<span class="help-inline">
+							<span id="extenderMaxUnit"></span><span>&nbsp;(Maximum: </span><span id="extenderMaxAmount"></span>)
+						</span>
+					</div>
+				</div>
+				<div style="display: none;">
+					<select id="extenderunit" name="unit" data-mini="true">
+						<option value="Days">Tage</option>
+						<option value="Hours">Stunden</option>
+						<option value="Minutes">Minuten</option>
+					</select>
+				</div>
+			</div>
+		</form>
+
+		<div class="dialog-action-buttons">
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" data-inline="true" data-role="button" data-rel="back">Abbrechen</a>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" data-inline="true" data-role="button" data-theme="b" close-on-success="true" validate="extendForm" server-operation="extend" form-to-submit="extendForm" server-success="{&#39;handler&#39;:&#39;cisco.ise.sponsor.pages.home.handleManageListOperation&#39;}">OK</a>
+		</div>
+	</div>
+	<!-- /content -->
+</div><!-- /page --><div data-role="dialog" id="changePwd" data-url="changePwd">
+
+            <div data-role="header" data-position="fixed" data-theme="a">
+                <h1>Kennwort ändern</h1>
+            </div><!-- /header -->
+
+            <div data-role="content" data-theme="a">
+                <form class="validateable" id="changePwdForm" novalidate="novalidate">
+
+					<div data-role="fieldcontain">
+						<label for="ui_changepwd_currentpwd_label">Aktuelles Kennwort:&nbsp;*</label>
+						<input type="password" id="ui_changepwd_currentpwd_label" name="user.password" autocomplete="off" class="required">
+					</div>
+					<div data-role="fieldcontain">
+						<label for="ui_changepwd_newpwd_label">Neues Kennwort:&nbsp;*</label>
+						<input type="password" id="ui_changepwd_newpwd_label" required="" notequalto="#ui_changepwd_currentpwd_label" name="user.newPassword" autocomplete="off">
+					</div>
+					<div data-role="fieldcontain">
+						<label for="ui_changepwd_confirmpwd_label">Kennwort bestätigen:&nbsp;*</label>
+						<input type="password" id="ui_changepwd_confirmpwd_label" equalto="#ui_changepwd_newpwd_label" required="" name="user.confirmPassword" autocomplete="off">
+					</div>
+
+
+                </form>
+                <div class="dialog-action-buttons">
+                    <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" data-inline="true" data-role="button" data-rel="back">Abbrechen</a>
+                    <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" data-inline="true" data-role="button" data-theme="b" close-on-success="true" validate="changePwdForm" server-operation="sponsorChangePwd" form-to-submit="changePwdForm">Kennwort ändern</a>
+                </div>
+            </div><!-- /content -->
+
+    </div><!-- /page --><div data-role="dialog" selection-dependant="true" id="createKnownAccountNotify" data-url="createKnownAccountNotify">
+
+        <div data-role="header" data-position="fixed" data-theme="a">
+            <h1>Benachrichtigen</h1>
+        </div><!-- /header -->
+
+        <div data-role="content" data-theme="a">
+
+				<p>Benachrichtigungen zustellen über:</p>	 
+<form class="validateable" notify-form="true" id="createKnownAccountNotifyForm" novalidate="novalidate">
+	<input data-mini="true" type="checkbox" value="true" name="print" class="custom" id="createKnownAccountNotifyFormPrint">
+	<label for="createKnownAccountNotifyFormPrint">Drucken</label>
+	<input data-mini="true" type="checkbox" name="email" class="custom" value="true" id="createKnownAccountNotifyFormEmail">
+	<label for="createKnownAccountNotifyFormEmail">E-Mail</label>
+
+	<blockquote> 
+	
+		<input data-mini="true" type="checkbox" name="copyMe" class="custom" value="true" id="createKnownAccountNotifyFormCopyMe" checkbox-dependant="createKnownAccountNotifyFormEmail" disabled="">
+		<label for="createKnownAccountNotifyFormCopyMe">Mich als zusätzlichen Empfänger hinzufügen</label>
+		<div data-role="fieldcontain">
+	        	<label for="createKnownAccountNotifyFormCopyEmail">E-Mail-Adresse des Sponsors*</label>
+	            <input data-mini="true" type="text" name="copyEmail" class="email" required="" value="" id="createKnownAccountNotifyFormCopyEmail" checkbox-dependant="createKnownAccountNotifyFormEmail" disabled="">
+	        </div>
+		</blockquote>
+</form>
+
+<div class="dialog-action-buttons">
+                <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" data-inline="true" data-role="button" data-rel="back">Abbrechen</a>
+                <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" data-inline="true" data-role="button" data-theme="b" close-on-success="true" validate="createKnownAccountNotifyForm" server-operation="createKnownNotify" form-to-submit="createKnownAccountNotifyForm">OK</a>
+            </div>
+
+        </div><!-- /content -->
+
+    </div><!-- /page --><div data-role="dialog" selection-dependant="true" id="createImportAccountNotify" data-url="createImportAccountNotify">
+
+        <div data-role="header" data-position="fixed" data-theme="a">
+            <h1>Benachrichtigen</h1>
+        </div><!-- /header -->
+
+        <div data-role="content" data-theme="a">
+
+				<p>Benachrichtigungen zustellen über:</p>	 
+<form class="validateable" notify-form="true" id="createImportNotifyForm" novalidate="novalidate">
+	<input data-mini="true" type="checkbox" value="true" name="print" class="custom" id="createImportNotifyFormPrint">
+	<label for="createImportNotifyFormPrint">Drucken</label>
+	<input data-mini="true" type="checkbox" name="email" class="custom" value="true" id="createImportNotifyFormEmail">
+	<label for="createImportNotifyFormEmail">E-Mail</label>
+
+	<blockquote> 
+	
+		<input data-mini="true" type="checkbox" name="summary" class="custom" value="true" id="createImportNotifyFormSummary" checkbox-dependant="createImportNotifyFormEmail" disabled="">
+		<label for="createImportNotifyFormSummary">Importzusammenfassung an mich senden</label>
+		<input data-mini="true" type="checkbox" name="copyMe" class="custom" value="true" id="createImportNotifyFormCopyMe" checkbox-dependant="createImportNotifyFormEmail" disabled="">
+		<label for="createImportNotifyFormCopyMe">Mich als zusätzlichen Empfänger hinzufügen</label>
+		<div data-role="fieldcontain">
+	        	<label for="createImportNotifyFormCopyEmail">E-Mail-Adresse des Sponsors*</label>
+	            <input data-mini="true" type="text" name="copyEmail" class="email" required="" value="" id="createImportNotifyFormCopyEmail" checkbox-dependant="createImportNotifyFormEmail" disabled="">
+	        </div>
+		</blockquote>
+</form>
+
+<div class="dialog-action-buttons">
+                <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" data-inline="true" data-role="button" data-rel="back">Fertig</a></div>
+                <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" data-inline="true" data-role="button" data-theme="b" close-on-success="true" validate="createImportNotifyForm" server-operation="resend" form-to-submit="createImportNotifyForm">Benachrichtigen</a></div>
+            </div>
+
+        <!-- /content -->
+
+    <!-- /page --><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#server-error" data-rel="dialog" id="server-error-launch"></a>
+<div data-role="dialog" id="server-error" data-url="server-error">
+
+        <div data-role="header" data-position="fixed" data-theme="a">
+            <h1></h1>
+        </div><!-- /header -->
+    
+        <div data-role="content" data-theme="a">    
+            <p id="server-error-text"></p>        
+        </div><!-- /content -->
+    
+    </div><!-- /page --><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#server-message" data-rel="dialog" id="server-message-launch"></a>
+<div data-role="dialog" id="server-message" data-url="server-message">
+
+        <div data-role="header" data-position="fixed" data-theme="a">
+            <h1></h1>
+        </div><!-- /header -->
+
+        <div data-role="content" data-theme="a">
+            <p id="server-message-text"></p>
+        </div><!-- /content -->
+
+    </div><!-- /page --><div data-role="dialog" selection-dependant="true" id="suspend" data-url="suspend">
+
+        <div data-role="header" data-position="fixed" data-theme="a">
+            <h1>Sperren</h1>
+        </div><!-- /header -->
+
+        <div data-role="content" data-theme="a">
+         	<form class="validateable" id="suspendForm" novalidate="novalidate">
+	            <p>Möchten Sie die ausgewählten Konten wirklich sperren?</p>
+	            <div data-role="fieldcontain">
+	                <label for="suspendreason">Grund für Sperrung:</label>
+	                <textarea id="suspendreason" name="reason"></textarea>
+	            </div>
+            </form>
+            <div class="dialog-action-buttons">
+                <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" data-inline="true" data-role="button" data-rel="back">Abbrechen</a>
+                <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" data-inline="true" data-role="button" data-theme="b" validate="suspendForm" server-operation="suspend" form-to-submit="suspendForm" server-success="{&#39;handler&#39;:&#39;cisco.ise.sponsor.pages.home.handleManageListOperation&#39;}">OK</a>
+            </div>
+        </div><!-- /content -->
+    </div><!-- /page --><div data-role="dialog" selection-dependant="true" id="delete" data-url="delete">
+
+        <div data-role="header" data-position="fixed" data-theme="a">
+            <h1>Löschen</h1>
+        </div><!-- /header -->
+
+        <div data-role="content" data-theme="a">
+            <p>Möchten Sie die ausgewählten Konten wirklich löschen?</p>
+            <div class="dialog-action-buttons">
+                <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" data-inline="true" data-role="button" data-rel="back">Abbrechen</a>
+                <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" data-inline="true" data-role="button" data-theme="b" server-operation="delete" server-success="{&#39;handler&#39;:&#39;cisco.ise.sponsor.pages.home.handleManageDeleteOperation&#39;}">OK</a>
+            </div>
+        </div><!-- /content -->
+
+    </div><!-- /page --><div data-role="dialog" selection-dependant="true" id="resetPassword" data-url="resetPassword">
+
+        <div data-role="header" data-position="fixed" data-theme="a">
+            <h1>Kennwort zurücksetzen</h1>
+        </div><!-- /header -->
+
+        <div data-role="content" data-theme="a">
+    			<p>Möchten Sie das Kennwort für die ausgewählten Konten wirklich zurücksetzen?</p>	 
+<form class="validateable" notify-form="true" id="resetPasswordForm" novalidate="novalidate">
+	<input data-mini="true" type="checkbox" value="true" name="print" class="custom" id="resetPasswordFormPrint">
+	<label for="resetPasswordFormPrint">Drucken</label>
+	<input data-mini="true" type="checkbox" name="email" class="custom" value="true" id="resetPasswordFormEmail">
+	<label for="resetPasswordFormEmail">E-Mail</label>
+
+	<blockquote> 
+	
+		<input data-mini="true" type="checkbox" name="summary" class="custom" value="true" id="resetPasswordFormSummary" checkbox-dependant="resetPasswordFormEmail" disabled="">
+		<label for="resetPasswordFormSummary">Eine Zusammenfassung der Kennwortzurücksetzungen an mich senden</label>
+		<input data-mini="true" type="checkbox" name="copyMe" class="custom" value="true" id="resetPasswordFormCopyMe" checkbox-dependant="resetPasswordFormEmail" disabled="">
+		<label for="resetPasswordFormCopyMe">Mich als zusätzlichen Empfänger hinzufügen</label>
+		<div data-role="fieldcontain">
+	        	<label for="resetPasswordFormCopyEmail">E-Mail-Adresse des Sponsors*</label>
+	            <input data-mini="true" type="text" name="copyEmail" class="email" required="" value="" id="resetPasswordFormCopyEmail" checkbox-dependant="resetPasswordFormEmail" disabled="">
+	        </div>
+		</blockquote>
+</form>
+
+<div class="dialog-action-buttons">
+                <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" data-inline="true" data-role="button" data-rel="back">Abbrechen</a>
+                <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" data-inline="true" data-role="button" data-theme="b" validate="resetPasswordForm" form-to-submit="resetPasswordForm" server-operation="resetPassword" server-success="{&#39;handler&#39;:&#39;cisco.ise.sponsor.pages.home.handleManageListOperation&#39;}">OK</a>
+            </div>
+		</div><!-- /content -->
+    </div><!-- /page --><div data-role="dialog" selection-dependant="true" id="notifyImportJob" data-url="notifyImportJob">
+
+        <div data-role="header" data-position="fixed" data-theme="a">
+            <h1>Erneut senden</h1>
+        </div><!-- /header -->
+
+        <div data-role="content" data-theme="a">
+
+    			<p></p>	 
+<form class="validateable" notify-form="true" id="notifyImportJobForm" novalidate="novalidate">
+	<input data-mini="true" type="checkbox" value="true" name="print" class="custom" id="notifyImportJobFormPrint">
+	<label for="notifyImportJobFormPrint">Drucken</label>
+	<input data-mini="true" type="checkbox" name="email" class="custom" value="true" id="notifyImportJobFormEmail">
+	<label for="notifyImportJobFormEmail">E-Mail</label>
+
+	<blockquote> 
+	
+		<input data-mini="true" type="checkbox" name="summary" class="custom" value="true" id="notifyImportJobFormSummary" checkbox-dependant="notifyImportJobFormEmail" disabled="">
+		<label for="notifyImportJobFormSummary">Erstellte Konten: </label>
+		<input data-mini="true" type="checkbox" name="copyMe" class="custom" value="true" id="notifyImportJobFormCopyMe" checkbox-dependant="notifyImportJobFormEmail" disabled="">
+		<label for="notifyImportJobFormCopyMe">Mich als zusätzlichen Empfänger hinzufügen</label>
+		<div data-role="fieldcontain">
+	        	<label for="notifyImportJobFormCopyEmail">E-Mail-Adresse des Sponsors*</label>
+	            <input data-mini="true" type="text" name="copyEmail" class="email" required="" value="" id="notifyImportJobFormCopyEmail" checkbox-dependant="notifyImportJobFormEmail" disabled="">
+	        </div>
+		</blockquote>
+</form>
+
+<div class="dialog-action-buttons">
+                    <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" data-inline="true" data-role="button" data-rel="back">Abbrechen</a>
+                    <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" data-inline="true" data-role="button" data-theme="b" close-on-success="true" server-operation="notifyImportJob" validate="notifyImportJobForm" form-to-submit="notifyImportJobForm">OK</a>
+                </div>
+    	</div>
+    </div><!-- /page --><div data-role="page" data-theme="a" id="genericJobSummary" class="page-home" data-url="genericJobSummary">
+
+    <div id="cisco-mobile-menu-genericJobSummary" class="cisco-mobile-menu side_panel" data-role="panel" data-display="overlay" data-position="right" data-theme="a">
+    <div class="ui-panel-welcome-message">
+    	<p>Willkommen&nbsp;DanielaScherf</p>
+    </div>     
+    <ul data-role="listview" data-icon="false">
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#page-create" class="cisco-nav-button ui_create_accounts_button">Konten erstellen</a>
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#manageAccountsList" class="cisco-nav-button ui_manage_accounts_button">Konten verwalten<span class="manageCount ui-li-count ui-btn-up-b">165</span></a>
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#approveAccountsList" class="cisco-nav-button ui_approve_accounts_button">Ausstehende Konten<span class="pendingCount ui-li-count ui-btn-up-b">0</span></a>
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#notices" class="cisco-nav-button ui_notices_button">Mitteilungen<span class="jobCount ui-li-count ui-btn-up-b">0</span></a>
+        </li>
+        <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/help/b_spons_SponsorPortalUserGuide_en_us.html" target="_blank">Hilfe</a></li>
+        <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/Logout.action?portal=227a7cd0-d76c-11e4-9f05-6cae8b6601b8">Abmelden</a></li>
+    </ul>
+</div>
+<div data-role="popup" id="cisco-desktop-menu-genericJobSummary" class="cisco-desktop-menu">
+    <ul data-role="listview" data-inset="true" data-icon="false">
+        <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/help/b_spons_SponsorPortalUserGuide_en_us.html" target="_blank">Hilfe</a></li>
+        <li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/Logout.action?portal=227a7cd0-d76c-11e4-9f05-6cae8b6601b8">Abmelden</a></li>
+    </ul>
+</div>
+<div data-role="header" data-theme="a" class="ui-header ui-bar-a">
+        <div class="cisco-ise-banner">
+            <img src="./Sponsor-Startseite_files/TEMP_2646c1cae0f34d5d9d6874c853ee3df3logo_db_arcsight.png" id="ui_desktop_logo" class="cisco-ise cisco-ise-logo-image" alt="">
+<img src="./Sponsor-Startseite_files/mobile-logo.png" id="ui_mobile_logo" class="cisco-ise cisco-ise-logo-image" alt="">
+<h3 id="ui_banner_label" class="cisco-ise cisco-ise-banner-label">WLAN für Gäste</h3>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#cisco-mobile-menu-genericJobSummary" data-role="button" data-icon="bars" data-iconpos="notext" class="cisco-mobile-menu-button ui-btn-right">Menu</a>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#cisco-desktop-menu-genericJobSummary" data-rel="popup" data-role="button" data-icon="arrow-d" data-iconpos="right" class="cisco-desktop-menu-button ui-btn-right">Willkommen&nbsp;<span class="sponsorName">DanielaScherf</span></a>
+        </div>
+
+        </div>
+    <div data-role="content" data-theme="a" class="ui-content ui-body-a">
+        <div class="cisco-ise-body">
+            <div class="cisco-ise cisco-ise-content cisco-ise-main-content ui-corner-all ui-body-a ui-shadow">
+    <noscript>
+        &lt;p&gt;Sie m&amp;uuml;ssen JavaScript aktivieren, um diese Website nutzen zu k&amp;ouml;nnen.&lt;/p&gt;
+    </noscript>
+    <div class="cisco-ise-scriptable">
+        <div class="cisco-navbar cisco-mobile-hidden" data-role="navbar">
+    <ul>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#page-create" class="ui_create_accounts_button">Konten erstellen</a>
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#manageAccountsList" class="ui_manage_accounts_button"><div class="count-contain"><span class="count-label">Konten verwalten</span><span class="count-panel">(<span class="manageCount">165</span>)</span></div></a>
+
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#approveAccountsList" class="ui_approve_accounts_button"><div class="count-contain"><span class="count-label">Ausstehende Konten</span><span class="count-panel">(<span class="pendingCount">0</span>)</span></div></a>
+
+        </li>
+        <li>
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#notices" class="ui_notices_button"><div class="count-contain"><span class="count-label">Mitteilungen</span><span class="count-panel">(<span class="jobCount">0</span>)</span></div></a>
+
+        </li>
+    </ul>
+</div>
+<div class="approve-accounts-content cisco-nav-content" selection-dependant="true">
+
+		<div data-role="navbar">
+			<ul>
+				<li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" class="ui_notices_home_button"></a></li>
+				<li><a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" class="ui_notices_delete_button">Fertig</a></li>
+			</ul>
+		 </div>
+            <h3 id="ui_generic_job_summary"></h3>
+			<h4 id="ui_generic_job_summary_error"></h4>
+            <div class="page_panel" style="text-align:left">
+
+
+
+
+
+
+            </div>
+            <br>
+
+            <br>
+        </div>
+<div class="cisco-div-extender"></div>
+    </div>
+</div>
+<div class="cisco-ise-footer">
+    <div class="cisco-ise-footer-container">
+    <div class="cisco-footer-link cisco-footer-link-right cisco-footer-link-center">
+            <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/help/b_spons_SponsorPortalUserGuide_en_us.html" class="ui-link" target="_blank">Hilfe</a>
+    </div></div>
+</div></div>
+    </div>
+</div>
+<div data-role="dialog" selection-dependant="true" id="reinstate" data-url="reinstate">
+
+        <div data-role="header" data-position="fixed" data-theme="a">
+            <h1>Reaktivieren</h1>
+        </div><!-- /header -->
+
+        <div data-role="content" data-theme="a">
+            <p>Möchten Sie dieses Konto wirklich reaktivieren?</p>
+            <div class="dialog-action-buttons">
+                <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" data-inline="true" data-role="button" data-rel="back">Abbrechen</a>
+                <a href="https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN#" data-inline="true" data-role="button" data-theme="b" close-on-success="true" server-operation="reinstate" server-success="{&#39;handler&#39;:&#39;cisco.ise.sponsor.pages.home.handleManageListOperation&#39;}">OK</a>
+            </div>
+        </div><!-- /content -->
+
+    </div><!-- /page --><iframe title="" name="printFrame" src="./Sponsor-Startseite_files/blank.html" style="display:none"></iframe>
+
+        
+    
+
+<div class="ui-loader ui-corner-all ui-body-a ui-loader-default"><span class="ui-icon ui-icon-loading"></span><h1>loading</h1></div></body></html>

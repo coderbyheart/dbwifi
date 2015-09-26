@@ -1,0 +1,993 @@
+{
+  "log": {
+    "version": "1.2",
+    "creator": {
+      "name": "WebInspector",
+      "version": "537.36"
+    },
+    "pages": [],
+    "entries": [
+      {
+        "startedDateTime": "2015-09-26T12:17:35.287Z",
+        "time": 1391.1619999998948,
+        "request": {
+          "method": "POST",
+          "url": "https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/createKnown.action",
+          "httpVersion": "HTTP/1.1",
+          "headers": [
+            {
+              "name": "Cookie",
+              "value": "JSESSIONID=84A520C2AB2819BDC08EC0D6AEAF75B1; f5avrbbbbbbbbbbbbbbbb=AGPKNHHKJFJJFKCBJNJFDKGCIEPOAABJABHJMFIFGJGDLGNHPLAEIHLGHNLACLEEHLOJIDLJEHIJBKLBAIEMOCMEPMAPNBIMLCLIHDNKMFKIMHNGMJAFAMLEJKOMFDNE; portalSessionId=0e6b86ab-fdc6-4850-a3e7-3c26556a1759; f5_cspm=1234; f5avrbbbbbbbbbbbbbbbb=ODHMGOABMJGEBPOMBGKLPNLBPODJBGPEIOMAJIFMAAADEJHLBPKJEKHPIDLADABDJLBCOLBMANPCMNOEFIBICEOKLBIMIIAKLKFFCKBHKFLOOCBFILDNGKNBNMDAMFMN"
+            },
+            {
+              "name": "Origin",
+              "value": "https://wlanguest.noncd.bku-web.db.de:8443"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate"
+            },
+            {
+              "name": "Host",
+              "value": "wlanguest.noncd.bku-web.db.de:8443"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "de-DE,de;q=0.8,en-US;q=0.6,en;q=0.4"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.89 Safari/537.36"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/x-www-form-urlencoded"
+            },
+            {
+              "name": "Accept",
+              "value": "application/json, text/javascript, */*; q=0.01"
+            },
+            {
+              "name": "Referer",
+              "value": "https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN"
+            },
+            {
+              "name": "X-Requested-With",
+              "value": "XMLHttpRequest"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Content-Length",
+              "value": "474"
+            }
+          ],
+          "queryString": [],
+          "cookies": [
+            {
+              "name": "JSESSIONID",
+              "value": "84A520C2AB2819BDC08EC0D6AEAF75B1",
+              "expires": null,
+              "httpOnly": false,
+              "secure": false
+            },
+            {
+              "name": "f5avrbbbbbbbbbbbbbbbb",
+              "value": "AGPKNHHKJFJJFKCBJNJFDKGCIEPOAABJABHJMFIFGJGDLGNHPLAEIHLGHNLACLEEHLOJIDLJEHIJBKLBAIEMOCMEPMAPNBIMLCLIHDNKMFKIMHNGMJAFAMLEJKOMFDNE",
+              "expires": null,
+              "httpOnly": false,
+              "secure": false
+            },
+            {
+              "name": "portalSessionId",
+              "value": "0e6b86ab-fdc6-4850-a3e7-3c26556a1759",
+              "expires": null,
+              "httpOnly": false,
+              "secure": false
+            },
+            {
+              "name": "f5_cspm",
+              "value": "1234",
+              "expires": null,
+              "httpOnly": false,
+              "secure": false
+            },
+            {
+              "name": "f5avrbbbbbbbbbbbbbbbb",
+              "value": "ODHMGOABMJGEBPOMBGKLPNLBPODJBGPEIOMAJIFMAAADEJHLBPKJEKHPIDLADABDJLBCOLBMANPCMNOEFIBICEOKLBIMIIAKLKFFCKBHKFLOOCBFILDNGKNBNMDAMFMN",
+              "expires": null,
+              "httpOnly": false,
+              "secure": false
+            }
+          ],
+          "headersSize": 1059,
+          "bodySize": 472,
+          "postData": {
+            "mimeType": "application/x-www-form-urlencoded",
+            "text": "token=9JE2JOVBDPQOI754DWNJ5Y7VQHLG5IE1&portalSessionId=0e6b86ab-fdc6-4850-a3e7-3c26556a1759&firstName=Hans&lastName=Wurst&emailAddress=hans%40wurst.de&phoneNumber=0123456789&company=Wurst+AG&personBeingVisited=m%40cto.hiv&language=German&days=24&from-date=2015-09-26&from-time=14%3A12&to-date=2015-09-27&to-time=14%3A12&location=Deutschland&ssid=dbs4guest&guestType=Freier+Tageszugang+WLAN+für+Gäste+/+Free+Wi-Fi+access+for+Guests&to=09/27/2015+14:12&from=09/26/2015+14:12",
+            "params": [
+              {
+                "name": "token",
+                "value": "9JE2JOVBDPQOI754DWNJ5Y7VQHLG5IE1"
+              },
+              {
+                "name": "portalSessionId",
+                "value": "0e6b86ab-fdc6-4850-a3e7-3c26556a1759"
+              },
+              {
+                "name": "firstName",
+                "value": "Hans"
+              },
+              {
+                "name": "lastName",
+                "value": "Wurst"
+              },
+              {
+                "name": "emailAddress",
+                "value": "hans%40wurst.de"
+              },
+              {
+                "name": "phoneNumber",
+                "value": "0123456789"
+              },
+              {
+                "name": "company",
+                "value": "Wurst+AG"
+              },
+              {
+                "name": "personBeingVisited",
+                "value": "m%40cto.hiv"
+              },
+              {
+                "name": "language",
+                "value": "German"
+              },
+              {
+                "name": "days",
+                "value": "24"
+              },
+              {
+                "name": "from-date",
+                "value": "2015-09-26"
+              },
+              {
+                "name": "from-time",
+                "value": "14%3A12"
+              },
+              {
+                "name": "to-date",
+                "value": "2015-09-27"
+              },
+              {
+                "name": "to-time",
+                "value": "14%3A12"
+              },
+              {
+                "name": "location",
+                "value": "Deutschland"
+              },
+              {
+                "name": "ssid",
+                "value": "dbs4guest"
+              },
+              {
+                "name": "guestType",
+                "value": "Freier+Tageszugang+WLAN+für+Gäste+/+Free+Wi-Fi+access+for+Guests"
+              },
+              {
+                "name": "to",
+                "value": "09/27/2015+14:12"
+              },
+              {
+                "name": "from",
+                "value": "09/26/2015+14:12"
+              }
+            ]
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "httpVersion": "HTTP/1.1",
+          "headers": [
+            {
+              "name": "Pragma",
+              "value": "no-store"
+            },
+            {
+              "name": "Date",
+              "value": "Sat, 26 Sep 2015 12:17:35 GMT"
+            },
+            {
+              "name": "Server",
+              "value": "server"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json;charset=utf-8"
+            },
+            {
+              "name": "Cache-Control",
+              "value": "no-chache, no-store, must-revalidate, max-age=0, proxy-revalidate, no-transform, pre-check=0, post-check=0, private"
+            },
+            {
+              "name": "Content-Length",
+              "value": "130"
+            },
+            {
+              "name": "token",
+              "value": "OPAGHQUVP41E2BSVZ9A56XM5J0J0EI7Y"
+            },
+            {
+              "name": "Expires",
+              "value": "-1"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 130,
+            "mimeType": "application/json",
+            "compression": 0
+          },
+          "redirectURL": "",
+          "headersSize": 343,
+          "bodySize": 130,
+          "_transferSize": 473
+        },
+        "cache": {},
+        "timings": {
+          "blocked": 0.713000001269393,
+          "dns": 0.005999998393234951,
+          "connect": 35.14500000164847,
+          "send": 0.24299999859060506,
+          "wait": 1354.7629999993683,
+          "receive": 0.2920000006247392,
+          "ssl": 18.580999996629505
+        },
+        "connection": "1444"
+      },
+      {
+        "startedDateTime": "2015-09-26T12:17:37.195Z",
+        "time": 542.8260000007867,
+        "request": {
+          "method": "POST",
+          "url": "https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/pending.action",
+          "httpVersion": "HTTP/1.1",
+          "headers": [
+            {
+              "name": "Cookie",
+              "value": "JSESSIONID=84A520C2AB2819BDC08EC0D6AEAF75B1; f5avrbbbbbbbbbbbbbbbb=AGPKNHHKJFJJFKCBJNJFDKGCIEPOAABJABHJMFIFGJGDLGNHPLAEIHLGHNLACLEEHLOJIDLJEHIJBKLBAIEMOCMEPMAPNBIMLCLIHDNKMFKIMHNGMJAFAMLEJKOMFDNE; portalSessionId=0e6b86ab-fdc6-4850-a3e7-3c26556a1759; f5_cspm=1234; f5avrbbbbbbbbbbbbbbbb=ODHMGOABMJGEBPOMBGKLPNLBPODJBGPEIOMAJIFMAAADEJHLBPKJEKHPIDLADABDJLBCOLBMANPCMNOEFIBICEOKLBIMIIAKLKFFCKBHKFLOOCBFILDNGKNBNMDAMFMN"
+            },
+            {
+              "name": "Origin",
+              "value": "https://wlanguest.noncd.bku-web.db.de:8443"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate"
+            },
+            {
+              "name": "Host",
+              "value": "wlanguest.noncd.bku-web.db.de:8443"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "de-DE,de;q=0.8,en-US;q=0.6,en;q=0.4"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.89 Safari/537.36"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/x-www-form-urlencoded"
+            },
+            {
+              "name": "Accept",
+              "value": "application/json, text/javascript, */*; q=0.01"
+            },
+            {
+              "name": "Referer",
+              "value": "https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN"
+            },
+            {
+              "name": "X-Requested-With",
+              "value": "XMLHttpRequest"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Content-Length",
+              "value": "92"
+            }
+          ],
+          "queryString": [],
+          "cookies": [
+            {
+              "name": "JSESSIONID",
+              "value": "84A520C2AB2819BDC08EC0D6AEAF75B1",
+              "expires": null,
+              "httpOnly": false,
+              "secure": false
+            },
+            {
+              "name": "f5avrbbbbbbbbbbbbbbbb",
+              "value": "AGPKNHHKJFJJFKCBJNJFDKGCIEPOAABJABHJMFIFGJGDLGNHPLAEIHLGHNLACLEEHLOJIDLJEHIJBKLBAIEMOCMEPMAPNBIMLCLIHDNKMFKIMHNGMJAFAMLEJKOMFDNE",
+              "expires": null,
+              "httpOnly": false,
+              "secure": false
+            },
+            {
+              "name": "portalSessionId",
+              "value": "0e6b86ab-fdc6-4850-a3e7-3c26556a1759",
+              "expires": null,
+              "httpOnly": false,
+              "secure": false
+            },
+            {
+              "name": "f5_cspm",
+              "value": "1234",
+              "expires": null,
+              "httpOnly": false,
+              "secure": false
+            },
+            {
+              "name": "f5avrbbbbbbbbbbbbbbbb",
+              "value": "ODHMGOABMJGEBPOMBGKLPNLBPODJBGPEIOMAJIFMAAADEJHLBPKJEKHPIDLADABDJLBCOLBMANPCMNOEFIBICEOKLBIMIIAKLKFFCKBHKFLOOCBFILDNGKNBNMDAMFMN",
+              "expires": null,
+              "httpOnly": false,
+              "secure": false
+            }
+          ],
+          "headersSize": 1054,
+          "bodySize": 92,
+          "postData": {
+            "mimeType": "application/x-www-form-urlencoded",
+            "text": "token=9JE2JOVBDPQOI754DWNJ5Y7VQHLG5IE1&portalSessionId=0e6b86ab-fdc6-4850-a3e7-3c26556a1759&",
+            "params": [
+              {
+                "name": "token",
+                "value": "9JE2JOVBDPQOI754DWNJ5Y7VQHLG5IE1"
+              },
+              {
+                "name": "portalSessionId",
+                "value": "0e6b86ab-fdc6-4850-a3e7-3c26556a1759"
+              },
+              {
+                "name": "",
+                "value": ""
+              }
+            ]
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "httpVersion": "HTTP/1.1",
+          "headers": [
+            {
+              "name": "Pragma",
+              "value": "no-store"
+            },
+            {
+              "name": "Date",
+              "value": "Sat, 26 Sep 2015 12:17:37 GMT"
+            },
+            {
+              "name": "Server",
+              "value": "server"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json;charset=utf-8"
+            },
+            {
+              "name": "Cache-Control",
+              "value": "no-chache, no-store, must-revalidate, max-age=0, proxy-revalidate, no-transform, pre-check=0, post-check=0, private"
+            },
+            {
+              "name": "Set-Cookie",
+              "value": "f5avrbbbbbbbbbbbbbbbb=JOPOJIJIFAIAIPCIBPMAJKEHEFPFKHPDCJMNCLKKKKCDNMMIJHEEIEFDDBHADPJKGMAKBBBEPPCIOEAAJICJAOEALDKGLJKFONNAIILHCLJPHFCCAOJJDPMEBKCEKMKH; HttpOnly; secure"
+            },
+            {
+              "name": "Content-Length",
+              "value": "165"
+            },
+            {
+              "name": "Expires",
+              "value": "-1"
+            }
+          ],
+          "cookies": [
+            {
+              "name": "f5avrbbbbbbbbbbbbbbbb",
+              "value": "JOPOJIJIFAIAIPCIBPMAJKEHEFPFKHPDCJMNCLKKKKCDNMMIJHEEIEFDDBHADPJKGMAKBBBEPPCIOEAAJICJAOEALDKGLJKFONNAIILHCLJPHFCCAOJJDPMEBKCEKMKH",
+              "expires": null,
+              "httpOnly": true,
+              "secure": true
+            }
+          ],
+          "content": {
+            "size": 165,
+            "mimeType": "application/json",
+            "compression": 0
+          },
+          "redirectURL": "",
+          "headersSize": 484,
+          "bodySize": 165,
+          "_transferSize": 649
+        },
+        "cache": {},
+        "timings": {
+          "blocked": 1.43899999966379,
+          "dns": -1,
+          "connect": -1,
+          "send": 0.47600000107194984,
+          "wait": 540.2759999997213,
+          "receive": 0.6350000003296827,
+          "ssl": -1
+        },
+        "connection": "1444"
+      },
+      {
+        "startedDateTime": "2015-09-26T12:17:37.223Z",
+        "time": 300.60300000332063,
+        "request": {
+          "method": "POST",
+          "url": "https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/readGuest.action",
+          "httpVersion": "HTTP/1.1",
+          "headers": [
+            {
+              "name": "Cookie",
+              "value": "JSESSIONID=84A520C2AB2819BDC08EC0D6AEAF75B1; f5avrbbbbbbbbbbbbbbbb=AGPKNHHKJFJJFKCBJNJFDKGCIEPOAABJABHJMFIFGJGDLGNHPLAEIHLGHNLACLEEHLOJIDLJEHIJBKLBAIEMOCMEPMAPNBIMLCLIHDNKMFKIMHNGMJAFAMLEJKOMFDNE; portalSessionId=0e6b86ab-fdc6-4850-a3e7-3c26556a1759; f5_cspm=1234; f5avrbbbbbbbbbbbbbbbb=ODHMGOABMJGEBPOMBGKLPNLBPODJBGPEIOMAJIFMAAADEJHLBPKJEKHPIDLADABDJLBCOLBMANPCMNOEFIBICEOKLBIMIIAKLKFFCKBHKFLOOCBFILDNGKNBNMDAMFMN"
+            },
+            {
+              "name": "Origin",
+              "value": "https://wlanguest.noncd.bku-web.db.de:8443"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate"
+            },
+            {
+              "name": "Host",
+              "value": "wlanguest.noncd.bku-web.db.de:8443"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "de-DE,de;q=0.8,en-US;q=0.6,en;q=0.4"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.89 Safari/537.36"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/x-www-form-urlencoded"
+            },
+            {
+              "name": "Accept",
+              "value": "application/json, text/javascript, */*; q=0.01"
+            },
+            {
+              "name": "Referer",
+              "value": "https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN"
+            },
+            {
+              "name": "X-Requested-With",
+              "value": "XMLHttpRequest"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Content-Length",
+              "value": "137"
+            }
+          ],
+          "queryString": [],
+          "cookies": [
+            {
+              "name": "JSESSIONID",
+              "value": "84A520C2AB2819BDC08EC0D6AEAF75B1",
+              "expires": null,
+              "httpOnly": false,
+              "secure": false
+            },
+            {
+              "name": "f5avrbbbbbbbbbbbbbbbb",
+              "value": "AGPKNHHKJFJJFKCBJNJFDKGCIEPOAABJABHJMFIFGJGDLGNHPLAEIHLGHNLACLEEHLOJIDLJEHIJBKLBAIEMOCMEPMAPNBIMLCLIHDNKMFKIMHNGMJAFAMLEJKOMFDNE",
+              "expires": null,
+              "httpOnly": false,
+              "secure": false
+            },
+            {
+              "name": "portalSessionId",
+              "value": "0e6b86ab-fdc6-4850-a3e7-3c26556a1759",
+              "expires": null,
+              "httpOnly": false,
+              "secure": false
+            },
+            {
+              "name": "f5_cspm",
+              "value": "1234",
+              "expires": null,
+              "httpOnly": false,
+              "secure": false
+            },
+            {
+              "name": "f5avrbbbbbbbbbbbbbbbb",
+              "value": "ODHMGOABMJGEBPOMBGKLPNLBPODJBGPEIOMAJIFMAAADEJHLBPKJEKHPIDLADABDJLBCOLBMANPCMNOEFIBICEOKLBIMIIAKLKFFCKBHKFLOOCBFILDNGKNBNMDAMFMN",
+              "expires": null,
+              "httpOnly": false,
+              "secure": false
+            }
+          ],
+          "headersSize": 1057,
+          "bodySize": 137,
+          "postData": {
+            "mimeType": "application/x-www-form-urlencoded",
+            "text": "token=9JE2JOVBDPQOI754DWNJ5Y7VQHLG5IE1&portalSessionId=0e6b86ab-fdc6-4850-a3e7-3c26556a1759&selected=927f7e40-6448-11e5-9f05-6cae8b6601b8",
+            "params": [
+              {
+                "name": "token",
+                "value": "9JE2JOVBDPQOI754DWNJ5Y7VQHLG5IE1"
+              },
+              {
+                "name": "portalSessionId",
+                "value": "0e6b86ab-fdc6-4850-a3e7-3c26556a1759"
+              },
+              {
+                "name": "selected",
+                "value": "927f7e40-6448-11e5-9f05-6cae8b6601b8"
+              }
+            ]
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "httpVersion": "HTTP/1.1",
+          "headers": [
+            {
+              "name": "Pragma",
+              "value": "no-store"
+            },
+            {
+              "name": "Date",
+              "value": "Sat, 26 Sep 2015 12:17:37 GMT"
+            },
+            {
+              "name": "Server",
+              "value": "server"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json;charset=utf-8"
+            },
+            {
+              "name": "Cache-Control",
+              "value": "no-chache, no-store, must-revalidate, max-age=0, proxy-revalidate, no-transform, pre-check=0, post-check=0, private"
+            },
+            {
+              "name": "Set-Cookie",
+              "value": "f5avrbbbbbbbbbbbbbbbb=GICJBCCFCKBBCDHGOKBHEIEJFEBIIGCKJNNOLHNDJDKDOAIPMNBMFDPHPKJAKLCPGMPAIFMBFMJIPAOJJIANAMBAJCNBIALFNMHIDFMAICPGDHDANNCDBCKOMIEHDHMF; HttpOnly; secure"
+            },
+            {
+              "name": "Content-Length",
+              "value": "1017"
+            },
+            {
+              "name": "Expires",
+              "value": "-1"
+            }
+          ],
+          "cookies": [
+            {
+              "name": "f5avrbbbbbbbbbbbbbbbb",
+              "value": "GICJBCCFCKBBCDHGOKBHEIEJFEBIIGCKJNNOLHNDJDKDOAIPMNBMFDPHPKJAKLCPGMPAIFMBFMJIPAOJJIANAMBAJCNBIALFNMHIDFMAICPGDHDANNCDBCKOMIEHDHMF",
+              "expires": null,
+              "httpOnly": true,
+              "secure": true
+            }
+          ],
+          "content": {
+            "size": 1017,
+            "mimeType": "application/json",
+            "compression": 0
+          },
+          "redirectURL": "",
+          "headersSize": 485,
+          "bodySize": 1017,
+          "_transferSize": 1502
+        },
+        "cache": {},
+        "timings": {
+          "blocked": 0.449000002845423,
+          "dns": 0.006999998731771984,
+          "connect": 34.94100000170871,
+          "send": 0.23299999884329736,
+          "wait": 264.3600000010338,
+          "receive": 0.6130000001576263,
+          "ssl": 17.772999999579003
+        },
+        "connection": "1454"
+      },
+      {
+        "startedDateTime": "2015-09-26T12:17:37.535Z",
+        "time": 4808.288000000175,
+        "request": {
+          "method": "POST",
+          "url": "https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/bootstrap.action",
+          "httpVersion": "HTTP/1.1",
+          "headers": [
+            {
+              "name": "Cookie",
+              "value": "JSESSIONID=84A520C2AB2819BDC08EC0D6AEAF75B1; portalSessionId=0e6b86ab-fdc6-4850-a3e7-3c26556a1759; f5_cspm=1234; f5avrbbbbbbbbbbbbbbbb=GICJBCCFCKBBCDHGOKBHEIEJFEBIIGCKJNNOLHNDJDKDOAIPMNBMFDPHPKJAKLCPGMPAIFMBFMJIPAOJJIANAMBAJCNBIALFNMHIDFMAICPGDHDANNCDBCKOMIEHDHMF; f5avrbbbbbbbbbbbbbbbb=ODHMGOABMJGEBPOMBGKLPNLBPODJBGPEIOMAJIFMAAADEJHLBPKJEKHPIDLADABDJLBCOLBMANPCMNOEFIBICEOKLBIMIIAKLKFFCKBHKFLOOCBFILDNGKNBNMDAMFMN"
+            },
+            {
+              "name": "Origin",
+              "value": "https://wlanguest.noncd.bku-web.db.de:8443"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate"
+            },
+            {
+              "name": "Host",
+              "value": "wlanguest.noncd.bku-web.db.de:8443"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "de-DE,de;q=0.8,en-US;q=0.6,en;q=0.4"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.89 Safari/537.36"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/x-www-form-urlencoded"
+            },
+            {
+              "name": "Accept",
+              "value": "application/json, text/javascript, */*; q=0.01"
+            },
+            {
+              "name": "Referer",
+              "value": "https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN"
+            },
+            {
+              "name": "X-Requested-With",
+              "value": "XMLHttpRequest"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Content-Length",
+              "value": "178"
+            }
+          ],
+          "queryString": [],
+          "cookies": [
+            {
+              "name": "JSESSIONID",
+              "value": "84A520C2AB2819BDC08EC0D6AEAF75B1",
+              "expires": null,
+              "httpOnly": false,
+              "secure": false
+            },
+            {
+              "name": "portalSessionId",
+              "value": "0e6b86ab-fdc6-4850-a3e7-3c26556a1759",
+              "expires": null,
+              "httpOnly": false,
+              "secure": false
+            },
+            {
+              "name": "f5_cspm",
+              "value": "1234",
+              "expires": null,
+              "httpOnly": false,
+              "secure": false
+            },
+            {
+              "name": "f5avrbbbbbbbbbbbbbbbb",
+              "value": "GICJBCCFCKBBCDHGOKBHEIEJFEBIIGCKJNNOLHNDJDKDOAIPMNBMFDPHPKJAKLCPGMPAIFMBFMJIPAOJJIANAMBAJCNBIALFNMHIDFMAICPGDHDANNCDBCKOMIEHDHMF",
+              "expires": null,
+              "httpOnly": false,
+              "secure": false
+            },
+            {
+              "name": "f5avrbbbbbbbbbbbbbbbb",
+              "value": "ODHMGOABMJGEBPOMBGKLPNLBPODJBGPEIOMAJIFMAAADEJHLBPKJEKHPIDLADABDJLBCOLBMANPCMNOEFIBICEOKLBIMIIAKLKFFCKBHKFLOOCBFILDNGKNBNMDAMFMN",
+              "expires": null,
+              "httpOnly": false,
+              "secure": false
+            }
+          ],
+          "headersSize": 1057,
+          "bodySize": 178,
+          "postData": {
+            "mimeType": "application/x-www-form-urlencoded",
+            "text": "token=OPAGHQUVP41E2BSVZ9A56XM5J0J0EI7Y&portalSessionId=0e6b86ab-fdc6-4850-a3e7-3c26556a1759&guestType=Freier+Tageszugang+WLAN+f%C3%BCr+G%C3%A4ste+%2F+Free+Wi-Fi+access+for+Guests",
+            "params": [
+              {
+                "name": "token",
+                "value": "OPAGHQUVP41E2BSVZ9A56XM5J0J0EI7Y"
+              },
+              {
+                "name": "portalSessionId",
+                "value": "0e6b86ab-fdc6-4850-a3e7-3c26556a1759"
+              },
+              {
+                "name": "guestType",
+                "value": "Freier+Tageszugang+WLAN+f%C3%BCr+G%C3%A4ste+%2F+Free+Wi-Fi+access+for+Guests"
+              }
+            ]
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "httpVersion": "HTTP/1.1",
+          "headers": [
+            {
+              "name": "Pragma",
+              "value": "no-store"
+            },
+            {
+              "name": "Date",
+              "value": "Sat, 26 Sep 2015 12:17:38 GMT"
+            },
+            {
+              "name": "Server",
+              "value": "server"
+            },
+            {
+              "name": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json;charset=utf-8"
+            },
+            {
+              "name": "Cache-Control",
+              "value": "no-chache, no-store, must-revalidate, max-age=0, proxy-revalidate, no-transform, pre-check=0, post-check=0, private"
+            },
+            {
+              "name": "Set-Cookie",
+              "value": "f5avrbbbbbbbbbbbbbbbb=ECAAPLKMAAMGKGAMKGOMHFDJEDNCKLEFIDJAJMIPBAGDOEPBNOFHGGNHHDHAEKLKGMCFLBGBPNNJDNFLJIFCAABBLOGGKKMHAPMJLEIAFEODJOGEJBOPIMHNPJEEDAPP; HttpOnly; secure"
+            },
+            {
+              "name": "Expires",
+              "value": "-1"
+            }
+          ],
+          "cookies": [
+            {
+              "name": "f5avrbbbbbbbbbbbbbbbb",
+              "value": "ECAAPLKMAAMGKGAMKGOMHFDJEDNCKLEFIDJAJMIPBAGDOEPBNOFHGGNHHDHAEKLKGMCFLBGBPNNJDNFLJIFCAABBLOGGKKMHAPMJLEIAFEODJOGEJBOPIMHNPJEEDAPP",
+              "expires": null,
+              "httpOnly": true,
+              "secure": true
+            }
+          ],
+          "content": {
+            "size": 359402,
+            "mimeType": "application/json",
+            "compression": -357
+          },
+          "redirectURL": "",
+          "headersSize": 491,
+          "bodySize": 359759,
+          "_transferSize": 360250
+        },
+        "cache": {},
+        "timings": {
+          "blocked": 0.972000001638662,
+          "dns": -1,
+          "connect": -1,
+          "send": 0.46099999963189797,
+          "wait": 2302.5280000001694,
+          "receive": 2504.326999998735,
+          "ssl": -1
+        },
+        "connection": "1454"
+      },
+      {
+        "startedDateTime": "2015-09-26T12:17:40.533Z",
+        "time": 1266.9710000009218,
+        "request": {
+          "method": "POST",
+          "url": "https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/pending.action",
+          "httpVersion": "HTTP/1.1",
+          "headers": [
+            {
+              "name": "Cookie",
+              "value": "JSESSIONID=84A520C2AB2819BDC08EC0D6AEAF75B1; portalSessionId=0e6b86ab-fdc6-4850-a3e7-3c26556a1759; f5_cspm=1234; f5avrbbbbbbbbbbbbbbbb=ECAAPLKMAAMGKGAMKGOMHFDJEDNCKLEFIDJAJMIPBAGDOEPBNOFHGGNHHDHAEKLKGMCFLBGBPNNJDNFLJIFCAABBLOGGKKMHAPMJLEIAFEODJOGEJBOPIMHNPJEEDAPP; f5avrbbbbbbbbbbbbbbbb=ODHMGOABMJGEBPOMBGKLPNLBPODJBGPEIOMAJIFMAAADEJHLBPKJEKHPIDLADABDJLBCOLBMANPCMNOEFIBICEOKLBIMIIAKLKFFCKBHKFLOOCBFILDNGKNBNMDAMFMN"
+            },
+            {
+              "name": "Origin",
+              "value": "https://wlanguest.noncd.bku-web.db.de:8443"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate"
+            },
+            {
+              "name": "Host",
+              "value": "wlanguest.noncd.bku-web.db.de:8443"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "de-DE,de;q=0.8,en-US;q=0.6,en;q=0.4"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.89 Safari/537.36"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/x-www-form-urlencoded"
+            },
+            {
+              "name": "Accept",
+              "value": "application/json, text/javascript, */*; q=0.01"
+            },
+            {
+              "name": "Referer",
+              "value": "https://wlanguest.noncd.bku-web.db.de:8443/sponsorportal/LoginSubmit.action?from=LOGIN"
+            },
+            {
+              "name": "X-Requested-With",
+              "value": "XMLHttpRequest"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Content-Length",
+              "value": "92"
+            }
+          ],
+          "queryString": [],
+          "cookies": [
+            {
+              "name": "JSESSIONID",
+              "value": "84A520C2AB2819BDC08EC0D6AEAF75B1",
+              "expires": null,
+              "httpOnly": false,
+              "secure": false
+            },
+            {
+              "name": "portalSessionId",
+              "value": "0e6b86ab-fdc6-4850-a3e7-3c26556a1759",
+              "expires": null,
+              "httpOnly": false,
+              "secure": false
+            },
+            {
+              "name": "f5_cspm",
+              "value": "1234",
+              "expires": null,
+              "httpOnly": false,
+              "secure": false
+            },
+            {
+              "name": "f5avrbbbbbbbbbbbbbbbb",
+              "value": "ECAAPLKMAAMGKGAMKGOMHFDJEDNCKLEFIDJAJMIPBAGDOEPBNOFHGGNHHDHAEKLKGMCFLBGBPNNJDNFLJIFCAABBLOGGKKMHAPMJLEIAFEODJOGEJBOPIMHNPJEEDAPP",
+              "expires": null,
+              "httpOnly": false,
+              "secure": false
+            },
+            {
+              "name": "f5avrbbbbbbbbbbbbbbbb",
+              "value": "ODHMGOABMJGEBPOMBGKLPNLBPODJBGPEIOMAJIFMAAADEJHLBPKJEKHPIDLADABDJLBCOLBMANPCMNOEFIBICEOKLBIMIIAKLKFFCKBHKFLOOCBFILDNGKNBNMDAMFMN",
+              "expires": null,
+              "httpOnly": false,
+              "secure": false
+            }
+          ],
+          "headersSize": 1054,
+          "bodySize": 92,
+          "postData": {
+            "mimeType": "application/x-www-form-urlencoded",
+            "text": "token=OPAGHQUVP41E2BSVZ9A56XM5J0J0EI7Y&portalSessionId=0e6b86ab-fdc6-4850-a3e7-3c26556a1759&",
+            "params": [
+              {
+                "name": "token",
+                "value": "OPAGHQUVP41E2BSVZ9A56XM5J0J0EI7Y"
+              },
+              {
+                "name": "portalSessionId",
+                "value": "0e6b86ab-fdc6-4850-a3e7-3c26556a1759"
+              },
+              {
+                "name": "",
+                "value": ""
+              }
+            ]
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "httpVersion": "HTTP/1.1",
+          "headers": [
+            {
+              "name": "Pragma",
+              "value": "no-store"
+            },
+            {
+              "name": "Date",
+              "value": "Sat, 26 Sep 2015 12:17:40 GMT"
+            },
+            {
+              "name": "Server",
+              "value": "server"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json;charset=utf-8"
+            },
+            {
+              "name": "Cache-Control",
+              "value": "no-chache, no-store, must-revalidate, max-age=0, proxy-revalidate, no-transform, pre-check=0, post-check=0, private"
+            },
+            {
+              "name": "Set-Cookie",
+              "value": "f5avrbbbbbbbbbbbbbbbb=MDHGIEBCHNHBKFNLOJCHNFFLBFGIHOOJBPKDPOIOPGEDAFGOEMNLDNMKENNAHHKAJMFNIKNJCCAMHOIIJIBOIOGPMNDDLBNPNCLMAELLKFOLKEMCOLKCJHNAEAPLHKCJ; HttpOnly; secure"
+            },
+            {
+              "name": "Content-Length",
+              "value": "165"
+            },
+            {
+              "name": "Expires",
+              "value": "-1"
+            }
+          ],
+          "cookies": [
+            {
+              "name": "f5avrbbbbbbbbbbbbbbbb",
+              "value": "MDHGIEBCHNHBKFNLOJCHNFFLBFGIHOOJBPKDPOIOPGEDAFGOEMNLDNMKENNAHHKAJMFNIKNJCCAMHOIIJIBOIOGPMNDDLBNPNCLMAELLKFOLKEMCOLKCJHNAEAPLHKCJ",
+              "expires": null,
+              "httpOnly": true,
+              "secure": true
+            }
+          ],
+          "content": {
+            "size": 165,
+            "mimeType": "application/json",
+            "compression": 0
+          },
+          "redirectURL": "",
+          "headersSize": 484,
+          "bodySize": 165,
+          "_transferSize": 649
+        },
+        "cache": {},
+        "timings": {
+          "blocked": 1.04799999826355,
+          "dns": -1,
+          "connect": -1,
+          "send": 0.3310000029159701,
+          "wait": 1264.7939999988005,
+          "receive": 0.7980000009417836,
+          "ssl": -1
+        },
+        "connection": "1444"
+      }
+    ]
+  }
+}
