@@ -1,0 +1,24 @@
+{
+  "name": "dbwifi",
+  "version": "0.0.1",
+  "description": "WiFi Bulk Account Creator",
+  "main": "index.js",
+  "dependencies": {
+    "angular": "^1.4.6",
+    "bootstrap": "git://github.com/twbs/bootstrap.git#v4-dev",
+    "jquery": "^2.1.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coderbyheart/dbwifi.git"
+  },
+  "author": "Markus Tacker <m@coderbyheart.de>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/coderbyheart/dbwifi/issues"
+  },
+  "homepage": "https://github.com/coderbyheart/dbwifi#readme"
+}

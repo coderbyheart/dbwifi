@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DB WiFi Bulk Account Creator</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="node_modules/angular/angular.min.js"></script>
+</head>
+<body data-ng-app="dbwifiApp">
+<header class="m-a">
+    <nav class="navbar navbar-dark bg-inverse">
+        <a class="navbar-brand" href="./index.html" target="_self">DB WiFi Bulk Account Creator</a>
+        <ul class="nav navbar-nav pull-right">
+            <li class="nav-item">
+                <a class="nav-link" href="https://github.com/coderbyheart/dbwifi">About</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="container">
+    <article class="row" data-ng-controller="WifiAccountCreatorController as vm">
+        <section class="col-md-offset-2 col-md-8">
+            <form name="dbwifiform">
+                <div class="card-block">
+                    <h1>Neue WLAN Zugänge für Gäste anlegen</h1>
+                    <fieldset class="form-group">
+                        <label for="listdata">
+                            Fügen Sie hier die per <em>Copy&amp;Paste aus Excel</em> Personen ein, für die Zugänge angelegt werden sollen. Das Format für dieses Text-Feld ist:<br>
+                            <small><code>Vorname Nachname user@email.de</code><br>
+                                <code>Vorname2 Nachname2 user2@email.de</code></small>
+                        </label>
+                        <p>In <a href="example-data.xlsx">example-data.xlsx</a> ist eine Beispiel-Datei</p>
+                        <textarea class="form-control" name="listdata" id="listdata" data-ng-model="listdata" rows="10" required></textarea>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <label for="senderEmail">
+                            Absender der Benachrichtigungs-Email:
+                        </label>
+                        <input type="email" class="form-control" name="senderEmail" id="senderEmail" data-ng-model="senderEmail" required/>
+                    </fieldset>
+                </div>
+                <div class="card-footer clearfix">
+                    <button class="btn btn-primary pull-right" data-ng-disabled="dbwifiform.$invalid || vm.submitting" data-ng-click="vm.submit()">
+                        <span data-ng-if="!vm.submitting">Go!</span>
+                        <span data-ng-if="vm.submitting">Processing …</span>
+                    </button>
+                </div>
+            </form>
+        </section>
+        <section class="col-md-offset-2 col-md-8" data-ng-show="vm.users" style="margin-top: 50px;">
+            <h2>Accounts to create</h2>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Nutzer</th>
+                    <th>Status</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr data-ng-repeat="user in vm.users">
+                    <td>%%user.firstname%% %%user.lastname%% <a href="mailto:%%user.email%%">%%user.email%%</a></td>
+                    <td>
+                        <span data-ng-show="!user.done">Lege an …</span>
+                        <span data-ng-show="user.done">OK</span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+        </section>
+    </article>
+</main>
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
